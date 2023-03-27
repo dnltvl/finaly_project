@@ -1,24 +1,24 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { UserService, IUser } from '../user.service';
-
+import { UserService } from '../user.service';
+import { IUser } from '../interfaces/user.interface';
 
 @Component({
   selector: 'app-user-form',
   templateUrl: './user-form.component.html',
-  styleUrls: ['./user-form.component.css']
+  styleUrls: ['./user-form.component.css'],
 })
 export class UserFormComponent implements OnInit {
-  users: IUser[] =  [];
+  users: IUser[] = [];
 
-  constructor(private userService:UserService) { }
+  constructor(private userService: UserService) {}
 
   siginForm: FormGroup = new FormGroup({
     userName: new FormControl(null, [Validators.required]),
     password: new FormControl(null, [Validators.required]),
   });
 
-   ngOnInit(): void {
+  ngOnInit(): void {
     this.userService.getAllUsers().subscribe((users) => {
       this.users = users;
     });

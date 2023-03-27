@@ -1,13 +1,14 @@
-<div class = "menu">
+<div class="menu">
 	<ul>
 		<li><a routerLink="">Home</a></li>
-		<li><a routerLink="/Category1">List of Flowers</a></li>
-		<li><a routerLink="/Category2">Decorative items</a></li>
+		<ng-container *ngIf="isLogIn">
+			<li><a routerLink="/Category1">List of Flowers</a></li>
+			<li><a routerLink="/Category2">Decorative items</a></li>
+		</ng-container>
 		<li><a routerLink="/Contact">Contact</a></li>
-		<li><a routerLink="/User">Sign in</a></li>
-		<li><a routerLink="/UserReg">Registration</a></li>
+		<ng-container *ngIf="!isLogIn">
+			<li><a routerLink="/User">Sign in</a></li>
+			<li><a routerLink="/UserReg">Sign up</a></li>
+		</ng-container>
 	</ul>
 </div>
-
-
-

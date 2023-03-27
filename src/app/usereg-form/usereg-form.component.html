@@ -1,26 +1,26 @@
-<div class = "box_logo"></div>
-<!-- <form (ngSubmit)="signIn()" [formGroup]="siginForm"> -->
-    <div class = "box2">
+<div class="box_logo"></div>
+<form (ngSubmit)="register()" [formGroup]="signupForm">
+    <div class="box2">
         <p class="important">Please, register on the site</p>
     </div>
-<div class = "box5">
-    <div class = "content">
-      <label for="username">First Name: </label>
-      <input id="username" type="text" formControlName="firstName">
-      <br>
-      <label for="username">Last Name: </label>
-      <input id="username" type="text" formControlName="lastName">
-      <br>
-      <label for="username">User Name: </label>
-      <input id="username" type="text" formControlName="userName">
-      <br>
-      <label for="password">Password: </label>
-      <input id="password" type="password" formControlName="password">
+    <div class="box5">
+        <div class="content">
+            <label for="firstname">First Name: </label>
+            <input id="firstname" type="text" formControlName="firstName">
+            <br>
+            <label for="lastname">Last Name: </label>
+            <input id="lastname" type="text" formControlName="lastName">
+            <br>
+            <label for="username">User Name: </label>
+            <input id="username" type="text" formControlName="userName">
+            <br>
+            <label for="password">Password: </label>
+            <input id="password" type="password" formControlName="password">
+        </div>
     </div>
-</div>
-<div class = "box6">
-    <div class = "content">
-        <button class="button_submit" type="submit">Register</button>
+    <div class="box6">
+        <div class="content">
+            <button class="button_submit" type="submit">Register</button>
+        </div>
     </div>
-</div>
-<!-- </form> -->
+</form>
