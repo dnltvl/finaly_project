@@ -1,0 +1,31 @@
+<div class = "box_logo"></div>
+<form (ngSubmit)="signIn()" [formGroup]="siginForm">
+    <div class = "box2">
+        <p class="important">Hello, to continue you need to identify yourself or register</p>
+    </div>
+<div class = "box5">
+    <div class = "content">
+      <label for="username">User Name: </label>
+      <input id="username" type="text" formControlName="userName">
+    </div>
+</div>
+  
+<div class = "box6">
+    <div class = "content">
+      <label for="password">Password: </label>
+      <input id="password" type="password" formControlName="password">
+    </div>
+</div>
+<div class = "box2">
+    <div class = "content">
+        <button class="button2" type="submit">Confirm</button>
+    </div>
+</div>
+</form>
+<form [routerLink]="['/UserReg']">
+    <div class = "box2">
+        <div class = "content">
+            <input class="button_submit" type="submit" value="   Register   " />
+        </div>
+    </div>
+</form>

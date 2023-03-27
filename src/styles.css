@@ -1,0 +1,210 @@
+/*---------------------box----------------------------*/	
+.content {
+	padding: 25px;
+}	
+
+.box_logo {
+    font-size:20px;
+	text-align:center;
+	grid-area: showcase;
+	min-height: 300px;
+	background: url(assets/home_header.jpg);
+	background-size: cover;
+	background-position: center;
+	padding: 0px;
+}
+
+.box {
+	display:inline-block;	
+    font-size:20px;
+	width:49%;
+	
+}	
+.box1 {
+	display:inline-block;	
+    font-size:20px;
+	width:30%;
+}
+
+.box2 {
+    font-size:20px;
+	text-align:center;
+}
+
+.box3 {
+    font-size:20px;
+	text-align:center;
+	grid-area: showcase;
+	min-height: 300px;
+	background: url(assets/header.jpg);
+	background-size: cover;
+	background-position: center;
+	padding: 0px;
+}
+
+.box4 {
+    font-size:20px;
+	text-align:center;
+	border-width: 2px;
+	border-style: solid;
+	border-color: white;
+}
+
+.box5 {
+	display:inline-block;	
+    font-size:20px;
+	width:49%;
+	text-align:right;
+}	
+
+.box6 {
+	display:inline-block;	
+	width:49%;
+    font-size:20px;
+	text-align:left;
+}
+
+/*-----------------navigation bar--------------------*/
+.menu li {
+	display:inline-block;
+}
+
+.menu a {
+	display: inline-block;
+    font-size: 25px;
+	font-style: oblique;
+	font-weight: bold;
+	padding: 20px;
+	text-decoration: none;
+	text-shadow: 1px 1px #ff0000;
+
+}
+
+/*---------------------header----------------------------*/
+.header {
+    text-align: center;
+	font-size:50px;
+	margin:20px;
+	border-bottom: 1px solid;
+}
+.header1 {
+    text-align: center;
+	font-size:40px;
+	margin:20px;
+}
+
+
+/*---------------------global----------------------------*/
+* {
+
+	/*Set the line height for the element*/	
+	line-height: 150%;
+	/*The vertical-align property sets the 
+	vertical alignment of an element.*/
+	vertical-align: top;	
+	font-family: Calibri;
+	margin: 0;
+	word-spacing: 0px;
+}
+
+/*---------------------image----------------------------*/
+img {
+	max-width:100%
+}
+
+.img_box {
+	max-width:50%
+}
+
+
+/*---------------------button1----------------------------*/
+.button_submit {
+	font-size: 20px;
+	width: 150px;
+    height: 50px;
+	padding: 5px;  
+	border: 3px solid;		
+	border-radius: 4px;	
+	margin: 1px;
+	color: white;
+	background-color: green;
+
+}
+
+/*---------------------button2----------------------------*/
+.button2
+{
+	font-size: 20px;
+	font-weight: bold;
+	width: 150px;
+    height: 50px;
+	padding: 5px;  
+	border: 3px solid;		
+	border-radius: 4px;
+	margin: 5px;
+	color: white;
+	background-color: rgb(170, 18, 18);
+}
+
+/*---------------------calc button----------------------------*/
+button
+{
+	font-size: 20px;
+	font-weight: bold;
+	width: 60px;
+    height: 50px;
+	padding: 5px;  
+	border: 3px solid;		
+	border-radius: 4px;
+	margin: 5px;
+	color: white;
+	background-color: rgb(170, 18, 18);
+}
+/*---------------------price----------------------------*/
+.price {
+    font-size: 25px;
+	font-weight: bold;
+    color: green;
+}
+
+.important {
+    font-size: 25px;
+	font-weight: bold;
+    color: rgb(168, 53, 3);
+}
+/*---------------------body----------------------------*/
+body
+{
+	background-color: hsl(0, 0%, 99%);
+}
+
+/*---------------------footer----------------------------*/
+.footer {
+    border-top: 1px solid;
+    font-size: 20px;
+}
+
+/*---------------------border---------------------------*/
+.border_line {
+    border: 1px solid;
+}
+
+/*---------------------media----------------------------*/
+@media (max-width:700px)	/*At less of 700px width*/  
+{
+	.box 		
+	{
+		width:100%		/*u_1_2 width is 100% instead of 50% */
+	}
+
+}
+
+
+@media (max-width:700px)	/*At less of 700px width*/  
+{
+	.box1 		
+	{
+		width:100%		/*u_1_2 width is 100% instead of 50% */
+	}
+
+}
