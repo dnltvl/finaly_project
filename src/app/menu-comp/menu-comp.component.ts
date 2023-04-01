@@ -1,4 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  OnChanges,
+  OnInit,
+  Output,
+  SimpleChanges,
+} from '@angular/core';
+import { Route, Router } from '@angular/router';
 import { IUser } from '../interfaces/user.interface';
 import { UserService } from '../user.service';
 
@@ -10,17 +18,22 @@ import { UserService } from '../user.service';
 export class MenuCompComponent implements OnInit {
   allUsers: IUser[] = [];
   isLogIn = false;
-  constructor(private userService: UserService) {
+  constructor(private userService: UserService, private router: Router) {
     this.userService.getAllUsers().subscribe((users) => {
       this.allUsers = users;
     });
   }
   ngOnInit(): void {
     console.log(this.allUsers);
-    const val = localStorage;
-    if (val.getItem('userName') === 'ascx') {
+    if (localStorage.getItem('userName') != null) {
+      console.log('is not equal null');
       this.isLogIn = true;
     }
-    console.log(val);
+  }
+
+  logout(event: Event) {
+    event.preventDefault();
+    localStorage.removeItem('userName');
+    this.isLogIn = false;
   }
 }

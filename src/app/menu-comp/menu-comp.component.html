@@ -4,6 +4,7 @@
 		<ng-container *ngIf="isLogIn">
 			<li><a routerLink="/Category1">List of Flowers</a></li>
 			<li><a routerLink="/Category2">Decorative items</a></li>
+			<li><a href="#" (click)="logout($event)">Logout</a></li>
 		</ng-container>
 		<li><a routerLink="/Contact">Contact</a></li>
 		<ng-container *ngIf="!isLogIn">

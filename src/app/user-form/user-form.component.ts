@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { UserService } from '../user.service';
 import { IUser } from '../interfaces/user.interface';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-form',
@@ -11,7 +12,7 @@ import { IUser } from '../interfaces/user.interface';
 export class UserFormComponent implements OnInit {
   users: IUser[] = [];
 
-  constructor(private userService: UserService) {}
+  constructor(private userService: UserService, private router: Router) {}
 
   siginForm: FormGroup = new FormGroup({
     userName: new FormControl(null, [Validators.required]),
@@ -36,6 +37,8 @@ export class UserFormComponent implements OnInit {
         this.users[i].password === user.password
       ) {
         console.log(true);
+        localStorage.setItem('userName', user.userName);
+        this.router.navigate([''], { queryParams: { isLoggedIn: true } });
       }
     }
   }

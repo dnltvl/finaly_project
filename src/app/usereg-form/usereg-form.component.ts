@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   templateUrl: './usereg-form.component.html',
   styleUrls: ['./usereg-form.component.css'],
 })
-export class UseregFormComponent implements OnInit {
+export class UseregFormComponent {
   // allUsers: IUser[] = [];
 
   signupForm: FormGroup = new FormGroup({
@@ -21,16 +21,10 @@ export class UseregFormComponent implements OnInit {
 
   constructor(private userService: UserService, private router: Router) {}
 
-  ngOnInit(): void {
-    // this.userService.getAllUsers().subscribe((users) => {
-    //   this.allUsers = users;
-    // });
-  }
-
   register() {
     const newUser: IUser = this.signupForm.value;
     this.userService.createUser(newUser).subscribe();
     localStorage.setItem('userName', newUser.userName);
-    this.router.navigateByUrl('Category1');
+    this.router.navigate(['']);
   }
 }
