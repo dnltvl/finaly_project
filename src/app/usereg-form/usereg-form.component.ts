@@ -22,6 +22,7 @@ export class UseregFormComponent {
   constructor(private userService: UserService, private router: Router) {}
 
   register() {
+    if (this.signupForm.invalid) return;
     const newUser: IUser = this.signupForm.value;
     this.userService.createUser(newUser).subscribe();
     localStorage.setItem('userName', newUser.userName);
