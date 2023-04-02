@@ -7,7 +7,7 @@ import { IUser } from './interfaces/user.interface';
 })
 export class UserService {
   baseURI: string = 'http://localhost:3000/';
-  signIn$ = new BehaviorSubject<boolean>(false);
+  signedin$ = new BehaviorSubject<boolean | null>(null);
   users: IUser[] = [];
   constructor(private http: HttpClient) {}
 
@@ -18,7 +18,7 @@ export class UserService {
   createUser(user: IUser): Observable<IUser> {
     return this.http.post<IUser>(`${this.baseURI}users`, user).pipe(
       tap(() => {
-        this.signIn$.next(true);
+        this.signedin$.next(true);
       })
     );
   }
@@ -29,29 +29,5 @@ export class UserService {
 
   editUser(user: IUser): Observable<IUser> {
     return this.http.put<IUser>(`${this.baseURI}users/${user.userName}`, user);
-  }
-
-  signIn(user: IUser) {
-    // this.getAllUsers().subscribe((users) => {
-    //   this.users = users;
-    // });
-
-    this.http.get<IUser[]>(`${this.baseURI}users`).pipe(
-      filter((users) => users === users),
-      tap(() => {
-        this.signIn$.next(true);
-        console.log(user);
-        localStorage.setItem('userName', user.userName);
-      })
-    );
-
-    for (let i = 0; i < this.users.length; i++) {
-      if (
-        this.users[i].userName === user.userName &&
-        this.users[i].password === user.password
-      ) {
-        // this.signIn$.next(true);
-      }
-    }
   }
 }

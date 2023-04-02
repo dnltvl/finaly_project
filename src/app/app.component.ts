@@ -1,5 +1,7 @@
 import { Component, EventEmitter, OnInit } from '@angular/core';
 import { UserService } from './user.service';
+import { BehaviorSubject } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -7,19 +9,24 @@ import { UserService } from './user.service';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
-  isLogIn = false;
-  constructor(private userService: UserService) {}
+  signedin$!: BehaviorSubject<boolean | null>;
+
+  constructor(private userService: UserService, private router: Router) {}
 
   ngOnInit() {
-    this.userService.signIn$.subscribe((signIn) => {
-      this.isLogIn = signIn;
+    this.userService.signedin$.subscribe((signIn) => {
+      this.signedin$ = this.userService.signedin$;
     });
-    console.log(this.isLogIn);
+    console.log(this.signedin$);
   }
 
   logout(event: Event) {
     event.preventDefault();
     localStorage.removeItem('userName');
-    this.isLogIn = false;
+    this.userService.signedin$.subscribe(() => {
+      this.userService.signedin$.next(false),
+        this.userService.signedin$.complete();
+    });
+    this.router.navigate(['']);
   }
 }

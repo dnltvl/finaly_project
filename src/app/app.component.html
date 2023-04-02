@@ -3,13 +3,13 @@
   <div class="menu">
     <ul>
       <li><a routerLink="">Home</a></li>
-      <ng-container *ngIf="isLogIn">
+      <ng-container *ngIf="signedin$ |async">
         <li><a routerLink="/Category1">List of Flowers</a></li>
         <li><a routerLink="/Category2">Decorative items</a></li>
         <li><a href="#" (click)="logout($event)">Logout</a></li>
       </ng-container>
       <li><a routerLink="/Contact">Contact</a></li>
-      <ng-container *ngIf="!isLogIn">
+      <ng-container *ngIf="!(signedin$ |async)">
         <li><a routerLink="/User">Sign in</a></li>
         <li><a routerLink="/UserReg">Sign up</a></li>
       </ng-container>
