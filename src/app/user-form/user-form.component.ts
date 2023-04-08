@@ -33,10 +33,7 @@ export class UserFormComponent implements OnInit {
     const user: IUser = this.siginForm.value;
     console.log(user);
     for (let i = 0; i < this.users.length; i++) {
-      if (
-        this.users[i].userName === user.userName &&
-        this.users[i].password === user.password
-      ) {
+      if (this.users[i].userName === user.userName && this.users[i].password === user.password) {
         console.log('User and password true');
         isTrue = true;
         this.userService.signedin$.next(true);

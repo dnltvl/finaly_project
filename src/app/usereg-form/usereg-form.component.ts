@@ -27,11 +27,17 @@ export class UseregFormComponent {
   }
 
   register() {
+    var isTrue = false;
     if (this.signupForm.invalid) return;
     const newUser: IUser = this.signupForm.value;
-    for(let i=0; i<this.allUsers.length; i++){
-      if(this.allUsers[i].userName === newUser.userName) return;
-      alert("The user already exists!")
+    for (let i=0; i<this.allUsers.length; i++){
+      if (this.allUsers[i].userName === newUser.userName) {
+        isTrue = true;
+      }
+    }
+    if(isTrue){
+      alert("The user already exists!");
+      return
     }
     this.userService.createUser(newUser).subscribe();
     localStorage.setItem('userName', newUser.userName);

@@ -1,46 +1,18 @@
 {
   "users": [
     {
-      "userName": "zcxxz",
-      "firstName": "sadcd",
-      "lastName": "cdxsz",
-      "password": "zxcz",
-      "id": 1
-    },
-    {
       "userName": "eli",
       "firstName": "eli",
       "lastName": "zar",
       "password": "eli",
-      "id": 2
+      "id": 1
     },
     {
       "userName": "avi",
       "firstName": "avi",
       "lastName": "red",
       "password": "avi",
-      "id": 3
-    },
-    {
-      "userName": "asddas",
-      "firstName": "asdada",
-      "lastName": "asds",
-      "password": "asda",
-      "id": 4
-    },
-    {
-      "userName": "sdfsdff",
-      "firstName": "dfsdf",
-      "lastName": "sdfsd",
-      "password": "asdad",
-      "id": 5
-    },
-    {
-      "userName": "www",
-      "firstName": "www",
-      "lastName": "www",
-      "password": "www",
-      "id": 6
+      "id": 2
     }
   ],
   "items": [
@@ -52,7 +24,7 @@
       "pic1": "../assets/11.jpg",
       "header1": "More information",
       "paragraph1": "Once their spectacular frilly blooms have died, the green-leaved shrubs provide an attractive backdrop for other plants. The plant can live up to 100 years and is cold-hardy from 20 to -40 degrees Fahrenheit. Plant tree peonies six weeks before the first freeze in the late fall, but not in the spring, which weakens them.",
-      "qty": 11,
+      "qty": 7,
       "price": 130
     },
     {
@@ -63,7 +35,7 @@
       "pic1": "../assets/22.jpg",
       "header1": "More information",
       "paragraph1": "The big, thistle-like leaves of Oriental poppy are downy, deeply-lobed, and rich green in color, offering aesthetic value in their own right. The leaves are tightly packed, and the flower stems are stiff and hairy, making Oriental poppy a good cut flower. The pods that succeed the flowers also have an ornamental quality and are dried for floral arrangements and crafts.",
-      "qty": 4,
+      "qty": 2,
       "price": 125
     },
     {
@@ -107,7 +79,7 @@
       "pic1": "../assets/66.jpg",
       "header1": "More information",
       "paragraph1": "True lilies are perennial plants that grow from bulbs that have a characteristic scale structure and notably large flowers. More than 80 species are in the genus, but most of the plants grown in gardens are hybrid crosses of various native species—or cultivars that have been selectively developed from those hybrids.",
-      "qty": 41,
+      "qty": 39,
       "price": 120
     },
     {
