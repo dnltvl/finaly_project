@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { UserService } from '../user.service';
+import { UserService } from '../services/user.service';
 import { IUser } from '../interfaces/user.interface';
 import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
@@ -28,7 +28,7 @@ export class UserFormComponent implements OnInit {
 
   signIn() {
     if (this.siginForm.invalid) return;
-    var isTrue = true;
+    var isTrue = false;
     console.log('Form is valid');
     const user: IUser = this.siginForm.value;
     console.log(user);
@@ -40,8 +40,11 @@ export class UserFormComponent implements OnInit {
         console.log('User and password true');
         isTrue = true;
         this.userService.signedin$.next(true);
-        // this.userService.signedin$.complete();
       }
+    }
+    if(!isTrue){
+      alert("The user or password is incorrect!");
+      return
     }
     this.router.navigate(['']);
   }

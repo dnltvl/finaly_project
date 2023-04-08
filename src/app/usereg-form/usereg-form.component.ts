@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { IUser } from '../interfaces/user.interface';
-import { UserService } from '../user.service';
+import { UserService } from '../services/user.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./usereg-form.component.css'],
 })
 export class UseregFormComponent {
-  // allUsers: IUser[] = [];
+  allUsers: IUser[] = [];
 
   signupForm: FormGroup = new FormGroup({
     userName: new FormControl(null, [Validators.required]),
@@ -19,11 +19,20 @@ export class UseregFormComponent {
     password: new FormControl(null, [Validators.required]),
   });
 
-  constructor(private userService: UserService, private router: Router) {}
+  constructor(private userService: UserService, private router: Router) {
+    this.userService.getAllUsers().subscribe((users)=>{
+      this.allUsers = users;
+      console.log(this.allUsers)
+    })
+  }
 
   register() {
     if (this.signupForm.invalid) return;
     const newUser: IUser = this.signupForm.value;
+    for(let i=0; i<this.allUsers.length; i++){
+      if(this.allUsers[i].userName === newUser.userName) return;
+      alert("The user already exists!")
+    }
     this.userService.createUser(newUser).subscribe();
     localStorage.setItem('userName', newUser.userName);
     this.router.navigate(['']);

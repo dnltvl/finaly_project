@@ -1,5 +1,5 @@
 import { Component, EventEmitter, OnInit } from '@angular/core';
-import { UserService } from './user.service';
+import { UserService } from './services/user.service';
 import { BehaviorSubject } from 'rxjs';
 import { Router } from '@angular/router';
 

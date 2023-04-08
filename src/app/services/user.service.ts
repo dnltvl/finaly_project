@@ -1,22 +1,22 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, filter, Observable, tap } from 'rxjs';
-import { IUser } from './interfaces/user.interface';
+import { IUser } from '../interfaces/user.interface';
 @Injectable({
   providedIn: 'root',
 })
 export class UserService {
-  baseURI: string = 'http://localhost:3000/';
+  baseURL: string = 'http://localhost:3000/';
   signedin$ = new BehaviorSubject<boolean | null>(null);
-  users: IUser[] = [];
+  
   constructor(private http: HttpClient) {}
 
   getAllUsers(): Observable<IUser[]> {
-    return this.http.get<IUser[]>(`${this.baseURI}users`);
+    return this.http.get<IUser[]>(`${this.baseURL}users`);
   }
 
   createUser(user: IUser): Observable<IUser> {
-    return this.http.post<IUser>(`${this.baseURI}users`, user).pipe(
+    return this.http.post<IUser>(`${this.baseURL}users`, user).pipe(
       tap(() => {
         this.signedin$.next(true);
       })
@@ -24,10 +24,10 @@ export class UserService {
   }
 
   deleteUser(user: IUser): Observable<IUser> {
-    return this.http.delete<IUser>(`${this.baseURI}users/${user.userName}`);
+    return this.http.delete<IUser>(`${this.baseURL}users/${user.userName}`);
   }
 
   editUser(user: IUser): Observable<IUser> {
-    return this.http.put<IUser>(`${this.baseURI}users/${user.userName}`, user);
+    return this.http.put<IUser>(`${this.baseURL}users/${user.userName}`, user);
   }
 }

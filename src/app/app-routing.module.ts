@@ -35,11 +35,11 @@ const routes: Routes = [
     component: UseregFormComponent
   },
   {
-    path:'Product1/:id',
+    path:'Product1/:prodId',
     component: Product1CompComponent
   },
   {
-    path:'Finale/:id/:result_t/:count_t',
+    path:'Finale/:prodId/:result_t/:count_t',
     component: FinaleComponent
   }
 ];
