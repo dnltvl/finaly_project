@@ -13,6 +13,13 @@
       "lastName": "red",
       "password": "avi",
       "id": 2
+    },
+    {
+      "userName": "az",
+      "firstName": "Avshalom",
+      "lastName": "Zarviv",
+      "password": "asd",
+      "id": 3
     }
   ],
   "items": [
@@ -101,7 +108,7 @@
       "pic1": "../assets/88.jpg",
       "header1": "Brand information",
       "paragraph1": "When youre part of it, you put your heart into it.<br>At John Lewis & Partners, were more than employees - were owners. Thats why were all called Partners. And thats why we all go above and beyond to offer quality products and outstanding service to the people that matter most - you, our customers. Because for us, its personal.",
-      "qty": 9,
+      "qty": 7,
       "price": 299
     },
     {

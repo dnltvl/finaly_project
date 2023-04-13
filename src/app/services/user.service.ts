@@ -9,7 +9,7 @@ import { IUser } from '../interfaces/user.interface';
 export class UserService {
   baseURL: string = 'http://localhost:3000/';
   signedin$ = new BehaviorSubject<boolean | null>(null);
-  
+
   constructor(private http: HttpClient) {}
 
   getAllUsers(): Observable<IUser[]> {

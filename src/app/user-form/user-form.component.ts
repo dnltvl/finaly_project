@@ -12,7 +12,7 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class UserFormComponent implements OnInit {
   users: IUser[] = [];
-  signedin$ = new BehaviorSubject<boolean | null>(null);
+
   constructor(private userService: UserService, private router: Router) {}
   ngOnInit(): void {
     this.userService.getAllUsers().subscribe((users) => {
@@ -29,19 +29,23 @@ export class UserFormComponent implements OnInit {
   signIn() {
     if (this.siginForm.invalid) return;
     var isTrue = false;
-    console.log('Form is valid');
+    // console.log('Form is valid');
     const user: IUser = this.siginForm.value;
-    console.log(user);
+    // console.log(user);
     for (let i = 0; i < this.users.length; i++) {
-      if (this.users[i].userName === user.userName && this.users[i].password === user.password) {
+      if (
+        this.users[i].userName === user.userName &&
+        this.users[i].password === user.password
+      ) {
         console.log('User and password true');
         isTrue = true;
-        this.userService.signedin$.next(true);
+        this.userService.signedin$.next(isTrue);
+        // console.log(`on signin ${this.userService.signedin$.getValue()}`);
       }
     }
-    if(!isTrue){
-      alert("The user or password is incorrect!");
-      return
+    if (!isTrue) {
+      alert('The user or password is incorrect!');
+      return;
     }
     this.router.navigate(['']);
   }

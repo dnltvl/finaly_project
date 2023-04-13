@@ -11,22 +11,23 @@ import { Router } from '@angular/router';
 export class AppComponent implements OnInit {
   signedin$!: BehaviorSubject<boolean | null>;
 
-  constructor(private userService: UserService, private router: Router) {}
+  constructor(private userService: UserService, private router: Router) {
+    this.signedin$ = this.userService.signedin$;
+    // console.log(this.signedin$);
+  }
 
   ngOnInit() {
-    this.userService.signedin$.subscribe((signIn) => {
+    this.userService.signedin$.subscribe(() => {
       this.signedin$ = this.userService.signedin$;
     });
-    console.log(this.signedin$);
+    // console.log(`on init ${this.signedin$.getValue()}`);
   }
 
   logout(event: Event) {
     event.preventDefault();
     localStorage.removeItem('userName');
-    this.userService.signedin$.subscribe(() => {
-      this.userService.signedin$.next(false),
-        this.userService.signedin$.complete();
-    });
+    this.signedin$.next(false);
+    // console.log(`on logout ${this.signedin$.getValue()}`);
     this.router.navigate(['']);
   }
 }
