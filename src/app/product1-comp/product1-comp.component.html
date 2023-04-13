@@ -1,29 +1,29 @@
 <!------------------------header-------------------------------->
-<h1 class = "header">{{itemsList[userID].header}}</h1>
+<h1 class = "header">{{item.header}}</h1>
 
 <!-------------------------boxes----------------------------->
 <div class = "box2">
 	<div class = "content">
-		<img src = "{{itemsList[userID].pic}}" alt = "">	
-		<p>{{itemsList[userID].paragraph}}</p>
+		<img src = "{{item.pic}}" alt = "">	
+		<p>{{item.paragraph}}</p>
 	</div>
 </div>
 <div class = "box5">
 	<div class = "content">
-		<img src = "{{itemsList[userID].pic1}}" alt = "">
+		<img src = "{{item.pic1}}" alt = "">
 	</div>
 </div>
 	
 <div class = "box">
 	<div class = "content">
-		<h4>{{itemsList[userID].header1}}</h4>
-		 <p>{{itemsList[userID].paragraph1}}</p>
+		<h4>{{item.header1}}</h4>
+		 <p>{{item.paragraph1}}</p>
 	</div>
 </div>
 
 <div class = "box4">
 	<div class = "content">
-		<h4>Price ${{itemsList[userID].price}}</h4>
+		<h4>Price ${{item.price}}</h4>
 		 <p>{{qty}} units in stock</p>
 	</div>
 </div>
@@ -32,11 +32,11 @@
 		<div class = "content">
 			<h4><u>Ordered quantity: {{count}}</u></h4>
 			<p class="price">Amount to pay: ${{result}}</p>
-			<button type="button" (click)="minus(itemsList[userID].price)"> - </button>
+			<button type="button" (click)="minus(item.price)"> - </button>
 			<button type="button" (click)="cancel()"> C </button>
-			<button type="button" (click)="plus(itemsList[userID].price)"> + </button>
-			<form [routerLink]="['/Finale',this.userID,result_t,count_t]">
-				<input class="button_submit" type="submit" value="   Continue   " />
+			<button type="button" (click)="plus(item.price)"> + </button>
+			<form [routerLink]="['/Finale',this.prodId,result_t,count_t]">
+				<input (click)="updItem()" class="button_submit" type="submit" value="Purchase" />
 			</form>
 		</div>
 	</div>
