@@ -23,19 +23,18 @@ export class Product1CompComponent implements OnInit {
     qty: null,
     price: null,}
     )
-  
+
+  isSubmitDisabled = true;
   prodId: any;
-  result_t: any;
-  count_t: any;
-  result: number = 0;
-  count: number = 0;
+  result: any;
+  count: any;
   qty: number = 0;
 
   constructor(private activatedRoute : ActivatedRoute, private itemService: ItemService) 
   {
     this.activatedRoute.paramMap.subscribe(params => this.prodId = params.get("prodId"));
-    this.activatedRoute.paramMap.subscribe(params => this.result_t = params.get("result_t"));
-    this.activatedRoute.paramMap.subscribe(params => this.count_t = params.get("count_t"));
+    this.activatedRoute.paramMap.subscribe(params => this.result = params.get("result"));
+    this.activatedRoute.paramMap.subscribe(params => this.count = params.get("count"));
   }
 
   ngOnInit(): void {
@@ -50,35 +49,46 @@ export class Product1CompComponent implements OnInit {
 
 plus(price: number)
 {
+  this.isSubmitDisabled = false;
   if(this.qty > 0)
   {
   this.result += price;
   this.count ++;
   this.qty --;
-  this.result_t=this.result;
-  this.count_t=this.count;
-  }
+ }
+ else
+ {
+  this.isSubmitDisabled = true;
+ }
 }
 minus(price: number)
 {
-  if(this.qty >= 0)
+  if(this.count > 0)
   {
-  this.result -= price;
-  this.count --;
-  this.qty ++;
-  if(this.count < 0)
-  {
-    this.result = 0;
-    this.count = 0;
-    this.qty = this.itemsList[this.prodId].qty; 
+    this.result -= price;
+    this.count --;
+    this.qty ++;
+    if(this.count < 0)
+    {
+      this.result = 0;
+      this.count = 0;
+      this.qty = this.itemsList[this.prodId].qty; 
+    }
   }
-}
+  
+    if(this.count == 0)
+    {
+      this.isSubmitDisabled = true;
+    }
+  
 }
 cancel()
 {
   this.result = 0;
   this.count = 0;
   this.qty = this.itemsList[this.prodId].qty;
+  this.isSubmitDisabled = true;
+
 }
 
 updItem()
@@ -95,7 +105,6 @@ updItem()
     price: this.item.price,}
     )
   const newItem = this.itemService.updateItem(this.item.id, uItem).subscribe();
-  console.log(newItem)
 }
 
 }

@@ -22,7 +22,6 @@ export class UseregFormComponent {
   constructor(private userService: UserService, private router: Router) {
     this.userService.getAllUsers().subscribe((users)=>{
       this.allUsers = users;
-      console.log(this.allUsers)
     })
   }
 
@@ -40,7 +39,6 @@ export class UseregFormComponent {
       return
     }
     this.userService.createUser(newUser).subscribe();
-    localStorage.setItem('userName', newUser.userName);
     this.router.navigate(['']);
   }
 }

@@ -9,25 +9,15 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
-  signedin$!: BehaviorSubject<boolean | null>;
 
-  constructor(private userService: UserService, private router: Router) {
-    this.signedin$ = this.userService.signedin$;
-    // console.log(this.signedin$);
+  constructor(public userService: UserService, private router: Router) {
   }
 
-  ngOnInit() {
-    this.userService.signedin$.subscribe(() => {
-      this.signedin$ = this.userService.signedin$;
-    });
-    // console.log(`on init ${this.signedin$.getValue()}`);
-  }
+  ngOnInit() {}
 
   logout(event: Event) {
     event.preventDefault();
-    localStorage.removeItem('userName');
-    this.signedin$.next(false);
-    // console.log(`on logout ${this.signedin$.getValue()}`);
+    this.userService.signedin$.next(false);
     this.router.navigate(['']);
   }
 }

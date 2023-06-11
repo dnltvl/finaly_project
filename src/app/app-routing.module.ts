@@ -39,7 +39,7 @@ const routes: Routes = [
     component: Product1CompComponent
   },
   {
-    path:'Finale/:prodId/:result_t/:count_t',
+    path:'Finale/:prodId/:result/:count',
     component: FinaleComponent
   }
 ];

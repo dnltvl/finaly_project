@@ -13,13 +13,6 @@
       "lastName": "red",
       "password": "avi",
       "id": 2
-    },
-    {
-      "userName": "az",
-      "firstName": "Avshalom",
-      "lastName": "Zarviv",
-      "password": "asd",
-      "id": 3
     }
   ],
   "items": [
@@ -53,7 +46,7 @@
       "pic1": "../assets/33.jpg",
       "header1": "More information",
       "paragraph1": "Some hydrangeas have large, round flower heads while others have smaller, flatter, and more delicate flowers, along with varying foliage shapes depending on the species. To ensure that hydrangea shrubs have time to establish a healthy root system, plant them in the fall or early spring. Hydrangeas are rapid growers, averaging two feet or more of growth per year. Be aware that the plant is toxic to humans and animals",
-      "qty": 28,
+      "qty": 26,
       "price": 150
     },
     {

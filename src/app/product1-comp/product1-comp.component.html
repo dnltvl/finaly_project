@@ -35,8 +35,8 @@
 			<button type="button" (click)="minus(item.price)"> - </button>
 			<button type="button" (click)="cancel()"> C </button>
 			<button type="button" (click)="plus(item.price)"> + </button>
-			<form [routerLink]="['/Finale',this.prodId,result_t,count_t]">
-				<input (click)="updItem()" class="button_submit" type="submit" value="Purchase" />
+			<form [routerLink]="['/Finale',this.prodId,result,count]">
+				<input (click)="updItem()" class="button_submit" type="submit" value="Purchase" [disabled]="isSubmitDisabled" />
 			</form>
 		</div>
 	</div>
