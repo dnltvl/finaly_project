@@ -15,6 +15,7 @@ import { ContactCompComponent } from './contact-comp/contact-comp.component';
 import { FinaleComponent } from './finale/finale.component';
 import { UserFormComponent } from './user-form/user-form.component';
 import { UseregFormComponent } from './usereg-form/usereg-form.component';
+import { UserManageFormComponent } from './usermanage-form/usermanage-form.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { UseregFormComponent } from './usereg-form/usereg-form.component';
     FinaleComponent,
     UserFormComponent,
     UseregFormComponent,
+    UserManageFormComponent,
   ],
   imports: [
     BrowserModule,

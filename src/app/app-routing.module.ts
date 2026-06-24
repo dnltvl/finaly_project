@@ -8,6 +8,7 @@ import { ContactCompComponent } from './contact-comp/contact-comp.component';
 import { UserFormComponent } from './user-form/user-form.component';
 import { UseregFormComponent } from './usereg-form/usereg-form.component';
 import { FinaleComponent } from './finale/finale.component';
+import { UserManageFormComponent } from './usermanage-form/usermanage-form.component';
 
 const routes: Routes = [
   {
@@ -33,6 +34,10 @@ const routes: Routes = [
   {
     path:'UserReg',
     component: UseregFormComponent
+  },
+{
+    path:'UserManage',
+    component: UserManageFormComponent
   },
   {
     path:'Product1/:prodId',
