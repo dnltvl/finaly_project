@@ -3,29 +3,21 @@
     <div class = "box2">
         <p class="important">To continue, you need to identify yourself or register</p>
     </div>
+    <br>
 <div class = "box5">
-    <div class = "content">
-      <label for="username">User Name: </label>
-      <input id="username" type="text" formControlName="userName">
-    </div>
+        <label for="username">User Name: </label>
+        <input id="username" type="text" formControlName="userName">
+        <br>
+        <label for="password">Password: </label>
+        <input id="password" type="password" formControlName="password">
 </div>
-  
-<div class = "box6">
-    <div class = "content">
-      <label for="password">Password: </label>
-      <input id="password" type="password" formControlName="password">
-    </div>
-</div>
-<div class = "box2">
-    <div class = "content">
+<div class = "box5">
         <button class="button2" type="submit">Confirm</button>
-    </div>
 </div>
 </form>
+<br>
+<div class = "box5">
 <form [routerLink]="['/UserReg']">
-    <div class = "box2">
-        <div class = "content">
-            <input class="button_submit" type="submit" value="   Register   " />
-        </div>
-    </div>
+<input class="button_submit" type="submit" value="   Register   " />
 </form>
+</div>

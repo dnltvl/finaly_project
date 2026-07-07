@@ -1,0 +1,40 @@
+<div class="box_logo"></div>
+<div class = "box2"><p class="important">User Details</p></div>
+<form (ngSubmit)="update()" [formGroup]="UpdForm">
+<div align="center" valign="middle">
+	<table class = "box_table" cellpadding="5" cellspacing="0" align="center" valign="middle">
+		<div class = "content">
+		<tr valign="middle">
+			<td valign="middle"><h4>User Name:</h4></td>
+			<td valign="middle" width="100">{{ user.userName }}</td>
+		</tr>
+		<tr valign="middle">
+			<td valign="middle"><h4>First Name:</h4></td>
+			<td valign="middle" width="100"><input formControlName="firstName" type="text" [value]="user.firstName"></td>
+		</tr>
+		<tr valign="middle">
+			<td valign="middle"><h4>Last Name:</h4></td>
+			<td valign="middle" width="100"><input formControlName="lastName" type="text" [value]="user.lastName"></td>
+		</tr>
+		<tr valign="middle">
+			<td valign="middle"><h4>Email:</h4></td>
+			<td valign="middle" width="100"><input formControlName="email" type="text" [value]="user.email"></td>
+		</tr>
+		<tr valign="middle">
+			<td valign="middle"><h4>Purchases:</h4></td>
+			<td valign="middle" width="100"><input formControlName="purchases" type="text" [value]="user.purchases"></td>
+		</tr>
+		<tr valign="middle">
+			<td valign="middle"><h4>Password:</h4></td>
+			<td valign="middle" width="100"><input formControlName="password" type="text" [value]="user.password"></td>
+		</tr>
+		<tr valign="middle">
+			<td valign="middle"><h4></h4></td>
+			<td valign="middle" width="100"><h4>
+				<input class="button3" type="submit" value="   Update   " />
+			</h4></td>
+		</tr>	
+		</div>
+	</table>
+</div>
+</form>

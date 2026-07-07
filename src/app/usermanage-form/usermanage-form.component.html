@@ -1,1 +1,25 @@
-hello
+<div class="box_logo"></div>
+<div class = "box2"><p class="important">List of users</p></div>
+<div align="center" valign="middle" *ngFor="let user of users; let i = index">
+	<table class = "box_table" cellpadding="5" cellspacing="0" align="center" valign="middle">
+		<div class = "content">
+		<tr valign="middle">
+			<td valign="middle"><h4>User Name:</h4></td>
+			<td valign="middle" width="100">{{ user.userName}}</td>
+			<td valign="middle"><h4>First Name:</h4></td>
+			<td valign="middle" width="100">{{ user.firstName}}</td>
+			<td valign="middle"><h4>Last Name:</h4></td>
+			<td valign="middle" width="100">{{ user.lastName}}</td>
+			<td valign="middle" width="100"><h4>
+				<form [routerLink]="['/UserUpdate', i]">
+					<input class="button3" type="submit" value="   Update   " />
+				</form>
+			</h4></td>
+			<td valign="middle" width="100"><h4>
+				<input (click)="deleteUser(user.id)" class="button4" type="submit" value="   Delete   " />
+			</h4></td>
+		</tr>		
+		</div>
+	</table>
+</div>
+

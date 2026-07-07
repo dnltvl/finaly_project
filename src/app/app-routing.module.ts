@@ -4,11 +4,13 @@ import { MainCompComponent } from './main-comp/main-comp.component';
 import { Category1CompComponent } from './category1-comp/category1-comp.component';
 import { Category2CompComponent } from './category2-comp/category2-comp.component';
 import { Product1CompComponent } from './product1-comp/product1-comp.component';
+import { Product2CompComponent } from './product2-comp/product2-comp.component';
 import { ContactCompComponent } from './contact-comp/contact-comp.component';
 import { UserFormComponent } from './user-form/user-form.component';
 import { UseregFormComponent } from './usereg-form/usereg-form.component';
 import { FinaleComponent } from './finale/finale.component';
 import { UserManageFormComponent } from './usermanage-form/usermanage-form.component';
+import { UserUpdateFormComponent } from './userupdate-form/userupdate-form.component';
 
 const routes: Routes = [
   {
@@ -39,9 +41,18 @@ const routes: Routes = [
     path:'UserManage',
     component: UserManageFormComponent
   },
+{
+    path:'UserUpdate/:userId',
+    component: UserUpdateFormComponent
+  },
+
   {
     path:'Product1/:prodId',
     component: Product1CompComponent
+  },
+  {
+    path:'Product2/:prodId',
+    component: Product2CompComponent
   },
   {
     path:'Finale/:prodId/:result/:count',

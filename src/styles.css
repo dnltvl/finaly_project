@@ -14,6 +14,24 @@
 	padding: 0px;
 }
 
+.box_table {
+    font-size:21px;
+	text-align:center;
+	border-width: 1px;
+	border-style: solid;
+	border-color: black;
+	background-color: rgb(177, 215, 194);
+}
+
+.box_table1 {
+    font-size:21px;
+	text-align:center;
+	border-width: 1px;
+	border-style: solid;
+	border-color: black;
+	background-color: white;
+}
+
 .box {
 	display:inline-block;	
     font-size:20px;
@@ -53,7 +71,7 @@
 .box5 {
 	display:inline-block;	
     font-size:20px;
-	width:49%;
+	width:57%;
 	text-align:right;
 }	
 
@@ -143,6 +161,35 @@ img {
 	width: 150px;
     height: 50px;
 	padding: 5px;  
+	border: 3px solid;		
+	border-radius: 4px;
+	margin: 5px;
+	color: white;
+	background-color: rgb(170, 18, 18);
+}
+
+/*---------------------button3----------------------------*/
+.button3
+{
+	font-size: 20px;
+	font-weight: bold;
+	width: 100px;
+    height: 40px;
+	padding: 1px;  
+	border: 3px solid;		
+	border-radius: 4px;
+	margin: 5px;
+	color: white;
+	background-color: rgb(123, 121, 121);
+}
+/*---------------------button4----------------------------*/
+.button4
+{
+	font-size: 20px;
+	font-weight: bold;
+	width: 100px;
+    height: 40px;
+	padding: 1px;  
 	border: 3px solid;		
 	border-radius: 4px;
 	margin: 5px;

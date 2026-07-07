@@ -2,16 +2,16 @@
   <div class="menu">
     <ul>
       <li><a routerLink="">Home</a></li>
+      <li><a routerLink="/Contact">Contact</a></li>
       <ng-container *ngIf="this.userService.signedin$ |async">
         <li><a routerLink="/Category1">List of Flowers</a></li>
         <li><a routerLink="/Category2">Decorative items</a></li>
         <li><a href="#" (click)="logout($event)">Logout</a></li>
+        <li><a routerLink="/UserManage">[ Manage ]</a></li>
       </ng-container>
-      <li><a routerLink="/Contact">Contact</a></li>
       <ng-container *ngIf="!(this.userService.signedin$ |async)">
         <li><a routerLink="/User">Sign in</a></li>
         <li><a routerLink="/UserReg">Sign up</a></li>
-        <li><a routerLink="/UserManage">Manage</a></li>
       </ng-container>
     </ul>
   </div>

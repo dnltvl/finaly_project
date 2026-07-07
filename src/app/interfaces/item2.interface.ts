@@ -1,4 +1,4 @@
-export interface IItem {
+export interface IItem2 {
   id: number;
   pic: string;
   header: string;

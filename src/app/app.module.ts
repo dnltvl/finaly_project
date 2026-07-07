@@ -11,11 +11,13 @@ import { MainCompComponent } from './main-comp/main-comp.component';
 import { Category1CompComponent } from './category1-comp/category1-comp.component';
 import { Category2CompComponent } from './category2-comp/category2-comp.component';
 import { Product1CompComponent } from './product1-comp/product1-comp.component';
+import { Product2CompComponent } from './product2-comp/product2-comp.component';
 import { ContactCompComponent } from './contact-comp/contact-comp.component';
 import { FinaleComponent } from './finale/finale.component';
 import { UserFormComponent } from './user-form/user-form.component';
 import { UseregFormComponent } from './usereg-form/usereg-form.component';
 import { UserManageFormComponent } from './usermanage-form/usermanage-form.component';
+import { UserUpdateFormComponent } from './userupdate-form/userupdate-form.component';
 
 @NgModule({
   declarations: [
@@ -25,11 +27,13 @@ import { UserManageFormComponent } from './usermanage-form/usermanage-form.compo
     Category1CompComponent,
     Category2CompComponent,
     Product1CompComponent,
+    Product2CompComponent,
     ContactCompComponent,
     FinaleComponent,
     UserFormComponent,
     UseregFormComponent,
     UserManageFormComponent,
+    UserUpdateFormComponent,
   ],
   imports: [
     BrowserModule,
