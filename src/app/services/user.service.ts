@@ -9,6 +9,10 @@ import { IUser } from '../interfaces/user.interface';
 export class UserService {
   baseURL: string = 'http://localhost:3000/';
   signedin$ = new BehaviorSubject<boolean | null>(null);
+  signedinAdmin$ = new BehaviorSubject<boolean | null>(null);
+  currentUserId$ = new BehaviorSubject<number | null>(null);
+  currentUserName$ = new BehaviorSubject<string | null>(null);
+  currentUserPurchases$ = new BehaviorSubject<number>(0);
 
   constructor(private http: HttpClient) {}
 
@@ -38,5 +42,16 @@ export class UserService {
 
   editUser(user: IUser): Observable<IUser> {
     return this.http.patch<IUser>(`${this.baseURL}users/${user.id}`, user);
+  }
+
+  private readonly DISCOUNT_THRESHOLD = 3;
+  private readonly DISCOUNT_RATE = 0.1;
+
+  isEligibleForDiscount(): boolean {
+    return (this.currentUserPurchases$.getValue() ?? 0) > this.DISCOUNT_THRESHOLD;
+  }
+
+  getDiscountedPrice(originalPrice: number): number {
+    return this.isEligibleForDiscount() ? originalPrice * (1 - this.DISCOUNT_RATE) : originalPrice;
   }
 }

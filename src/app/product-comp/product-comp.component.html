@@ -23,7 +23,11 @@
 
 <div class = "box4">
 	<div class = "content">
-		<h4>Price ${{item.price}}</h4>
+		<h4 *ngIf="!userService.isEligibleForDiscount()">Price ${{item.price}}</h4>
+		<h4 *ngIf="userService.isEligibleForDiscount()">
+			<span style="text-decoration: line-through;">${{item.price}}</span>
+			${{ effectivePrice.toFixed(2) }} (10% off!)
+		</h4>
 		 <p>{{qty}} units in stock</p>
 	</div>
 </div>
@@ -32,11 +36,9 @@
 		<div class = "content">
 			<h4><u>Ordered quantity: {{count}}</u></h4>
 			<p class="price">Amount to pay: ${{result}}</p>
-			<button type="button" (click)="minus(item.price)"> - </button>
-			<button type="button" (click)="cancel()"> C </button>
-			<button type="button" (click)="plus(item.price)"> + </button>
-			<form [routerLink]="['/Finale',this.prodId,result,count]">
-				<input (click)="updItem()" class="button_submit" type="submit" value="Purchase" [disabled]="isSubmitDisabled" />
-			</form>
+			<button class="button" type="button" (click)="minus()"> - </button>
+			<button class="button" type="button" (click)="cancel()"> C </button>
+			<button class="button" type="button" (click)="plus()"> + </button>
+			<button (click)="updItem(); addToBasket()" class="button_submit" type="button" [disabled]="isSubmitDisabled">Purchase</button>
 		</div>
 	</div>

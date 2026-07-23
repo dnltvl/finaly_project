@@ -1,16 +1,20 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MainCompComponent } from './main-comp/main-comp.component';
-import { Category1CompComponent } from './category1-comp/category1-comp.component';
-import { Category2CompComponent } from './category2-comp/category2-comp.component';
-import { Product1CompComponent } from './product1-comp/product1-comp.component';
-import { Product2CompComponent } from './product2-comp/product2-comp.component';
+import { CategoryCompComponent } from './category-comp/category-comp.component';
+import { ProductCompComponent } from './product-comp/product-comp.component';
+import { FinaleComponent } from './finale/finale.component';
 import { ContactCompComponent } from './contact-comp/contact-comp.component';
 import { UserFormComponent } from './user-form/user-form.component';
-import { UseregFormComponent } from './usereg-form/usereg-form.component';
-import { FinaleComponent } from './finale/finale.component';
-import { UserManageFormComponent } from './usermanage-form/usermanage-form.component';
-import { UserUpdateFormComponent } from './userupdate-form/userupdate-form.component';
+import { UseregFormComponent } from './user-reg-form/user-reg-form.component';
+import { UserManageFormComponent } from './user-manage-form/user-manage-form.component';
+import { UserUpdateFormComponent } from './user-update-form/user-update-form.component';
+import { ItemManageFormComponent } from './item-manage-form/item-manage-form.component';
+import { ItemUpdateFormComponent } from './item-update-form/item-update-form.component';
+import { ItemRegFormComponent } from './item-reg-form/item-reg-form.component';
+import { BascetManageFormComponent } from './bascet-manage-form/bascet-manage-form.component';
+import { BascetItemUpdComponent } from './bascet-item-upd-form/bascet-item-upd-form.component';
+import { PayManageFormComponent } from './pay-manage-form/pay-manage-form.component';
 
 const routes: Routes = [
   {
@@ -18,12 +22,8 @@ const routes: Routes = [
     component: MainCompComponent
   },
   {
-    path:'Category1',
-    component: Category1CompComponent
-  },
-  {
-    path:'Category2',
-    component: Category2CompComponent
+    path:'Category/:id',
+    component: CategoryCompComponent
   },
   {
     path:'Contact',
@@ -45,18 +45,37 @@ const routes: Routes = [
     path:'UserUpdate/:userId',
     component: UserUpdateFormComponent
   },
-
   {
-    path:'Product1/:prodId',
-    component: Product1CompComponent
+  path:'Product/:itemType/:prodId',
+  component: ProductCompComponent
+  },
+{
+  path:'Finale/:userId',
+  component: FinaleComponent
+},
+{
+  path:'PayManage/:userId',
+  component: PayManageFormComponent
+},
+  {
+    path:'ItemManage/:prodId',
+    component: ItemManageFormComponent
   },
   {
-    path:'Product2/:prodId',
-    component: Product2CompComponent
+    path:'ItemUpdate/:itemId',
+    component: ItemUpdateFormComponent
   },
   {
-    path:'Finale/:prodId/:result/:count',
-    component: FinaleComponent
+    path:'ItemReg',
+    component: ItemRegFormComponent
+  },
+  {
+    path:'BascetManage/:userId',
+    component: BascetManageFormComponent
+  },
+  {
+    path:'BascetItem/:userId',
+    component: BascetItemUpdComponent
   }
 ];
 

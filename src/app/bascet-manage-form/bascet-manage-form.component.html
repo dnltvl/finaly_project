@@ -1,0 +1,40 @@
+<div class="box_logo"></div>
+<div class = "box2"><p class="important">Bascet Management</p></div>
+<div align="center">
+	<table width="90%">
+		<tr>
+			<td align="left" valign="middle">
+			<input [routerLink]="['/PayManage', userId]" align="left" class="button_submit" type="submit" value="Pay">
+			</td>
+			<td align="right" valign="middle">
+				<form [routerLink]="['']">
+					<button class="button2" (click)="deleteAllBascets()">Delete Basket</button>
+				</form>
+			</td>
+		</tr>
+	</table>
+</div>
+<div class = "content" align="center" valign="middle">
+	<table border="1" class = "box_table1" cellpadding="5" cellspacing="0" align="center" valign="middle">
+		<tr valign="middle">
+			<td colspan="2" bgColor="EAE0CF"><h4>Item</h4></td>
+			<td width="100" bgColor="EAE0CF"><h4>Quantity</h4></td>
+			<td width="100" bgColor="EAE0CF"><h4>Price</h4></td>
+			<td bgColor="EAE0CF"><h4>Add/Reduce</h4></td>
+			<td bgColor="EAE0CF"><h4> </h4></td>
+		</tr>
+		<tr valign="middle" *ngFor="let bascet of bascet; let i = index">
+			<td width="400"><h4>{{ bascet.header }}</h4></td>
+			<td width="100"><img [src]="bascet.pic" /></td>
+			<td><h4>{{ bascet.itemQty}}</h4></td>
+			<td><h4>{{ bascet.itemPrice.toLocaleString()}}</h4></td>
+			<td>
+				<button class = "button_bascet1" (click)="plusQty(bascet)">+</button>
+				<button class = "button_bascet2" (click)="minusQty(bascet)" [disabled]="bascet.itemQty <= 1">-</button>
+			</td>
+			<td><h4>
+				<input (click)="deleteBascet(bascet.id)" class="button4" type="submit" value="   Delete   " />
+			</h4></td>
+		</tr>		
+	</table>
+</div>

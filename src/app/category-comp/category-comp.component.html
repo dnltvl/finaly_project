@@ -1,0 +1,25 @@
+<!------------------------header-------------------------------->
+<h1 class="header">{{ itemType === 1 ? 'List of Flowers' : 'Special Decorative items' }}</h1>
+
+<!-------------------------boxes----------------------------->
+<div class="box1" *ngFor="let item of items; let i = index">
+	<div class="content">
+		<table class="box_table1" cellpadding="0" cellspacing="0" align="center" valign="middle">
+			<tr><td>
+				<h3>{{ item.header }}</h3>
+				<p>{{ item.sub_header }}</p>
+				<img class="img_box" src="{{ item.pic }}" alt="{{ item.header }}">
+				<p class="price" *ngIf="!userService.isEligibleForDiscount()">Price ${{ item.price }}</p>
+				<p class="price" *ngIf="userService.isEligibleForDiscount()">
+				<span style="text-decoration: line-through;">${{ item.price }}</span>
+				${{ userService.getDiscountedPrice(item.price).toFixed(2) }} (10% off!)
+				</p>
+			</td></tr>
+			<tr><td>
+				<form [routerLink]="['/Product', itemType, i]">
+				<input class="button_submit" type="submit" value="   Details   " />
+				</form>
+			</td></tr>
+		</table>	
+	</div>
+</div>

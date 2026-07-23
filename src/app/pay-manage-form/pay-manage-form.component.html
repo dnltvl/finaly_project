@@ -1,0 +1,76 @@
+<div class="box_logo"></div>
+<div class="box2"><p class="important">Payment Details</p></div>
+
+<div class="box5" align="center">
+  <p>🔒 <strong>PCI DSS Compliant</strong> — Secure Payment Processing</p>
+</div>
+
+<form [formGroup]="payForm" (ngSubmit)="confirmPay()">
+
+  <div class="box5">
+    <label for="cardType">Card Type:</label>
+    <select id="cardType" formControlName="cardType">
+      <option [ngValue]="null" disabled>Select card type</option>
+      <option value="Mastercard">Mastercard</option>
+      <option value="Visa">Visa</option>
+      <option value="Diners">Diners</option>
+      <option value="American Express">American Express</option>
+    </select>
+    <p class="important" *ngIf="payForm.get('cardType')?.invalid && payForm.get('cardType')?.touched">
+      Please select a card type
+    </p>
+  </div>
+
+  <div class="box5">
+    <label for="cardNumber">Card Number:</label>
+    <input id="cardNumber" type="text" formControlName="cardNumber" maxlength="16" placeholder="16 digits">
+    <p class="important" *ngIf="payForm.get('cardNumber')?.invalid && payForm.get('cardNumber')?.touched">
+      Must be exactly 16 digits (numbers only)
+    </p>
+  </div>
+
+  <div class="box5">
+    <label for="expiry">Expiry Date:</label>
+    <input id="expiry" type="date" formControlName="expiry">
+    <p class="important" *ngIf="payForm.get('expiry')?.invalid && payForm.get('expiry')?.touched">
+      Please select an expiry date
+    </p>
+  </div>
+
+  <div class="box5">
+    <label for="cvv">CVV:</label>
+    <input id="cvv" type="password" formControlName="cvv" maxlength="3" placeholder="3 digits">
+    <p class="important" *ngIf="payForm.get('cvv')?.invalid && payForm.get('cvv')?.touched">
+      Must be exactly 3 digits
+    </p>
+  </div>
+
+  <div class="box5">
+    <label for="firstName">First Name:</label>
+    <input id="firstName" type="text" formControlName="firstName" placeholder="Letters only">
+    <p class="important" *ngIf="payForm.get('firstName')?.invalid && payForm.get('firstName')?.touched">
+      Letters only
+    </p>
+  </div>
+
+  <div class="box5">
+    <label for="lastName">Last Name:</label>
+    <input id="lastName" type="text" formControlName="lastName" placeholder="Letters only">
+    <p class="important" *ngIf="payForm.get('lastName')?.invalid && payForm.get('lastName')?.touched">
+      Letters only
+    </p>
+  </div>
+
+  <div class="box5">
+    <label for="nationalId">National ID:</label>
+    <input id="nationalId" type="text" formControlName="nationalId" maxlength="9" placeholder="9 digits">
+    <p class="important" *ngIf="payForm.get('nationalId')?.invalid && payForm.get('nationalId')?.touched">
+      Must be exactly 9 digits
+    </p>
+  </div>
+
+  <div class="box5" align="center">
+    <button class="button2" type="submit">Confirm to pay</button>
+  </div>
+
+</form>

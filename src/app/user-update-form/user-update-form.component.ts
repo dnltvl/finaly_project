@@ -5,13 +5,13 @@ import { UserService } from '../services/user.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
-  selector: 'app-userupdate-form',
-  templateUrl: './userupdate-form.component.html',
-  styleUrls: ['./userupdate-form.component.css'],
+  selector: 'app-user-update-form',
+  templateUrl: './user-update-form.component.html',
+  styleUrls: ['./user-update-form.component.css'],
 })
 export class UserUpdateFormComponent implements OnInit {
 
-  userId!: number; // property to hold the user ID from the route parameter
+  userId!: number;
 
   user:IUser = Object({
       id: null,
@@ -29,7 +29,7 @@ export class UserUpdateFormComponent implements OnInit {
     lastName: new FormControl(null, [Validators.required]),
     email: new FormControl(null, [Validators.required]),
     password: new FormControl(null, [Validators.required]),
-    purchases: new FormControl(0),
+    purchases: new FormControl(0, [Validators.required]),
   });
 
   constructor(private userService: UserService, private activatedRoute : ActivatedRoute, private router: Router) {
@@ -52,11 +52,9 @@ export class UserUpdateFormComponent implements OnInit {
   }
 
   update() {
-    console.log(this.UpdForm.get('firstName')?.value);
     if (this.UpdForm.invalid) return;
     const updUser: IUser = this.UpdForm.value;
-    updUser.id = this.user.id; // Set the user ID to the existing user's ID
-    console.log(updUser);
+    updUser.id = this.user.id;
     this.userService.editUser(updUser).subscribe();
     this.router.navigate(["/UserManage"]);
   }

@@ -1,0 +1,53 @@
+<div class="box_logo"></div>
+<form (ngSubmit)="register()" [formGroup]="itemForm">
+    <div class="box2">
+        <p class="important">Adding a new product</p>
+    </div>
+    <div class="box2">
+        <p>Please fill in the following fields:</p>
+    </div>
+    <div class="box2">
+    <form formControlName="category">
+        <img src="assets/un.png"  alt="" style="width: 30px;">&nbsp;
+        <select id="category" name="category" class="dropdown_form">
+        <option value="0">- Select the Category -</option>
+        <option value="1">Flowers</option>
+        <option value="2">Decorative Items</option>
+        </select>
+    </form>
+    </div>
+    <div class="box5">
+        <div class="content">
+            <label for="header">Header: </label>
+            <input id="header" type="text" formControlName="header">
+            <br>
+            <label for="pic">Picture URL: </label>
+            <div *ngIf="itemForm.get('pic')?.value"><img [src]="itemForm.get('pic')?.value" width="150"></div>
+				<input type="file" (change)="onFileSelected($event, 'pic')">
+            <br>
+            <label for="sub_header">Sub Header: </label>
+            <input id="sub_header" type="text" formControlName="sub_header">
+            <br>
+            <label for="paragraph">Paragraph: </label>
+            <textarea id="paragraph" formControlName="paragraph"></textarea>
+            <br>
+            <label for="pic1">Technical details: </label>
+            <div *ngIf="itemForm.get('pic1')?.value"><img [src]="itemForm.get('pic1')?.value" width="150"></div>
+				<input type="file" (change)="onFileSelected($event, 'pic1')">
+            <br>
+            <label for="header1">Additional Header: </label>
+            <input id="header1" type="text" formControlName="header1">
+            <br>
+            <label for="paragraph1">Full Description: </label>
+            <textarea id="paragraph1" formControlName="paragraph1"></textarea>
+            <br>
+            <label for="qty">Item Quantity: </label>
+            <input id="qty" type="number" formControlName="qty">
+            <br>
+            <label for="price">Item Price: </label>
+            <input id="price" type="number" formControlName="price">
+            <br>
+            <button class="button_submit" type="submit">Add new Item</button>
+        </div>
+    </div>
+</form>

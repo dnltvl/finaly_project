@@ -1,0 +1,62 @@
+<div class="box_logo"></div>
+<div class = "box2"><p class="important">Item Details</p></div>
+<form (ngSubmit)="update()" [formGroup]="UpdForm">
+<div align="center" valign="middle">
+	<table class = "box_table" cellpadding="5" cellspacing="0" align="center" valign="middle">
+		<div class = "content">
+		<tr align="left" valign="middle">
+			<td><h4>Header:</h4></td>
+			<td width="100"><input id="header" type="text" formControlName="header" [value]="item.header"></td>
+		</tr>
+		<tr align="left" valign="middle">
+			<td><h4>Picture URL:</h4></td>
+			<td width="100">
+				<div *ngIf="item.pic"><img [src]="item.pic" width="150"></div>
+				<input type="file" (change)="onFileSelected($event, 'pic')">
+			</td>
+		</tr>
+		<tr align="left" valign="middle">
+			<td><h4>Sub Header:</h4></td>
+			<td width="100"><input id="sub_header" type="text" formControlName="sub_header" [value]="item.sub_header"></td>
+		</tr>
+		<tr align="left" valign="middle">
+			<td><h4>Paragraph:</h4></td>
+			<td width="100"><textarea id="paragraph" formControlName="paragraph" [value]="item.paragraph"></textarea></td>
+		</tr>
+		<tr align="left" valign="middle">
+			<td><h4>Technical details:</h4></td>
+			<td width="100">
+				<div *ngIf="item.pic1"><img [src]="item.pic1" width="150"></div>
+				<input type="file" (change)="onFileSelected($event, 'pic1')">
+			</td>
+		</tr>
+		<tr align="left" valign="middle">
+			<td><h4>Additional Header:</h4></td>
+			<td width="100"><input id="header1" type="text" formControlName="header1" [value]="item.header1"></td>
+		</tr>
+		<tr align="left" valign="middle">
+			<td><h4>Full Description:</h4></td>
+			<td width="100"><textarea id="paragraph1" formControlName="paragraph1" [value]="item.paragraph1"></textarea></td>
+		</tr>
+		<tr align="left" valign="middle">
+			<td><h4>Item Quantity:</h4></td>
+			<td width="100"><input id="qty" type="number" formControlName="qty" [value]="item.qty"></td>
+		</tr>
+		<tr align="left" valign="middle">
+			<td><h4>Item Price:</h4></td>
+			<td width="100"><input id="price" type="number" formControlName="price" [value]="item.price"></td>
+		</tr>
+		<tr valign="middle">
+			<td align="left">
+				<form [routerLink]="['/ItemManage/1']">
+					<input class="button5" type="submit" value="   Back   " />
+				</form>
+			</td>
+			<td align="right" width="100"><h4>
+				<input class="button3" type="submit" value="   Update   " />
+			</h4></td>
+		</tr>	
+		</div>
+	</table>
+</div>
+</form>

@@ -11,7 +11,7 @@ export class Item2Service {
 
   constructor(private http: HttpClient) { }
 
-  getAllItems(): Observable<IItem2[]>{
+  getAllItems2(): Observable<IItem2[]>{
     return this.http.get<IItem2[]>(`${this.baseURL}items2`);
   }
 

@@ -4,12 +4,12 @@ import { IItem } from '../interfaces/item.interface';
 import { ItemService } from '../services/item.service';
 
 @Component({
-  selector: 'app-product1-comp',
-  templateUrl: './product1-comp.component.html',
-  styleUrls: ['./product1-comp.component.css']
+  selector: 'app-bascet-item-upd-form',
+  templateUrl: './bascet-item-upd-form.component.html',
+  styleUrls: ['./bascet-item-upd-form.component.css']
 })
 
-export class Product1CompComponent implements OnInit {
+export class BascetItemUpdComponent implements OnInit {
 
   itemsList: IItem[] = [];
   item:IItem = Object({
@@ -97,6 +97,7 @@ updItem()
     id: this.item.id,
     pic: this.item.pic,
     header: this.item.header,
+    sub_header: this.item.sub_header,
     paragraph: this.item.paragraph,
     pic1: this.item.pic1,
     header1: this.item.header1,
@@ -104,7 +105,7 @@ updItem()
     qty: this.qty,
     price: this.item.price,}
     )
-  const newItem = this.itemService.updateItem(this.item.id, uItem).subscribe();
+  const newItem = this.itemService.updateItem(uItem).subscribe();
 }
 
 }

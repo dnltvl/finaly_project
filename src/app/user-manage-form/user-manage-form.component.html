@@ -1,7 +1,16 @@
 <div class="box_logo"></div>
 <div class = "box2"><p class="important">List of users</p></div>
+<div align="center">
+	<table width="90%">
+		<tr>
+			<td align="left" valign="middle">
+			<input [routerLink]="['/UserReg']" align="left" class="button_submit" type="submit" value="   New   " />
+			</td>
+		</tr>
+	</table>
+</div>
 <div align="center" valign="middle" *ngFor="let user of users; let i = index">
-	<table class = "box_table" cellpadding="5" cellspacing="0" align="center" valign="middle">
+	<table class = "box_table1" cellpadding="5" cellspacing="0" align="center" valign="middle">
 		<div class = "content">
 		<tr valign="middle">
 			<td valign="middle"><h4>User Name:</h4></td>

@@ -1,11 +1,11 @@
 {
   "users": [
     {
-      "userName": "Admin",
-      "firstName": "Sys",
+      "userName": "admin",
+      "firstName": "System",
       "lastName": "Admin",
       "email": "admin@example.com",
-      "password": "123456789",
+      "password": "Qwerty!123",
       "purchases": 0,
       "id": 1
     },
@@ -14,9 +14,18 @@
       "firstName": "eli",
       "lastName": "zar",
       "email": "eli@zar.com",
-      "password": "123",
-      "purchases": 0,
+      "password": "Qwerty!123",
+      "purchases": 5,
       "id": 2
+    },
+    {
+      "userName": "cio",
+      "firstName": "Daniel",
+      "lastName": "Tavlinsky",
+      "email": "dnl.tvl@gmail.com",
+      "password": "Qwerty!123",
+      "purchases": 0,
+      "id": 3
     }
   ],
   "items": [
@@ -29,7 +38,7 @@
       "pic1": "../assets/11.jpg",
       "header1": "More information",
       "paragraph1": "Once their spectacular frilly blooms have died, the green-leaved shrubs provide an attractive backdrop for other plants. The plant can live up to 100 years and is cold-hardy from 20 to -40 degrees Fahrenheit. Plant tree peonies six weeks before the first freeze in the late fall, but not in the spring, which weakens them.",
-      "qty": 43,
+      "qty": 428,
       "price": 130
     },
     {
@@ -41,7 +50,7 @@
       "pic1": "../assets/22.jpg",
       "header1": "More information",
       "paragraph1": "The big, thistle-like leaves of Oriental poppy are downy, deeply-lobed, and rich green in color, offering aesthetic value in their own right. The leaves are tightly packed, and the flower stems are stiff and hairy, making Oriental poppy a good cut flower. The pods that succeed the flowers also have an ornamental quality and are dried for floral arrangements and crafts.",
-      "qty": 21,
+      "qty": 183,
       "price": 125
     },
     {
@@ -53,7 +62,7 @@
       "pic1": "../assets/33.jpg",
       "header1": "More information",
       "paragraph1": "Some hydrangeas have large, round flower heads while others have smaller, flatter, and more delicate flowers, along with varying foliage shapes depending on the species. To ensure that hydrangea shrubs have time to establish a healthy root system, plant them in the fall or early spring. Hydrangeas are rapid growers, averaging two feet or more of growth per year. Be aware that the plant is toxic to humans and animals",
-      "qty": 23,
+      "qty": 225,
       "price": 150
     },
     {
@@ -65,7 +74,7 @@
       "pic1": "../assets/44.jpg",
       "header1": "More information",
       "paragraph1": "Despite this diversity, most dahlias grow on long, erect stems that give the blooms room to show off. Native to Mexico and Central America, dahlias boast over 20,000 cultivars and 30 species and are the prized darlings of plant breeders and florists alike. However, pet lovers beware, as this species of flower is toxic to both dogs and cats.",
-      "qty": 26,
+      "qty": 249,
       "price": 140
     },
     {
@@ -77,7 +86,7 @@
       "pic1": "../assets/55.jpg",
       "header1": "More information",
       "paragraph1": "Many water lilies and lotuses are easy to grow and reward the gardener with fragrant and sumptuous blossoms from June until October. Both plants are best planted in spring. Water lilies start faster and typically have a faster growth rate than lotus, which are notoriously slow to start and need warmth and plenty of sunshine to flower.",
-      "qty": 35,
+      "qty": 328,
       "price": 130
     },
     {
@@ -89,7 +98,7 @@
       "pic1": "../assets/66.jpg",
       "header1": "More information",
       "paragraph1": "True lilies are perennial plants that grow from bulbs that have a characteristic scale structure and notably large flowers. More than 80 species are in the genus, but most of the plants grown in gardens are hybrid crosses of various native species—or cultivars that have been selectively developed from those hybrids.",
-      "qty": 56,
+      "qty": 552,
       "price": 120
     }
   ],
@@ -103,7 +112,7 @@
       "pic1": "../assets/77.jpg",
       "header1": "Brand information",
       "paragraph1": "Dartington Crystal began in 1967 when a group of Swedish glassmakers brought their skills to rural North Devon. Working with the finest natural materials, these craftsmen soon became known for creating beautiful glassware to be used and admired. Today, the company continues to provide elegant, simple designs in crystal and glass, and is now the only crystal brand still producing in the UK. With a contemporary and clean design style, Dartington combines the ultimate in functionality with eye-catching appeal to make it the perfect choice for your home or as a gift",
-      "qty": 52,
+      "qty": 493,
       "price": 199
     },
     {
@@ -115,7 +124,7 @@
       "pic1": "../assets/88.jpg",
       "header1": "Brand information",
       "paragraph1": "When youre part of it, you put your heart into it.<br>At John Lewis & Partners, were more than employees - were owners. Thats why were all called Partners. And thats why we all go above and beyond to offer quality products and outstanding service to the people that matter most - you, our customers. Because for us, its personal.",
-      "qty": 68,
+      "qty": 622,
       "price": 299
     },
     {
@@ -127,8 +136,19 @@
       "pic1": "../assets/99.jpg",
       "header1": "Brand information",
       "paragraph1": "Poole Pottery has been made in England since 1873. Now in the heart of the Staffordshire Potteries every piece is formed from English clay and sprung from handmade moulds. Each piece of Poole Pottery is handled with the care and attention of their skilled craftsmen, but it is their glazers and paintresses, whose expertise in decoration, that makes every piece unique and individual. Layer upon layer of reactive glaze create Pooles vibrant and bold decorations. Every finished item is personalised with the artists own individual mark, adding even more value to each piece.",
-      "qty": 19,
+      "qty": 181,
       "price": 99
+    }
+  ],
+  "baskets": [
+    {
+      "id": 1,
+      "orderId": 1,
+      "userId": 1,
+      "itemType": 2,
+      "itemId": 2,
+      "itemQty": 1,
+      "itemPrice": 299
     }
   ]
 }

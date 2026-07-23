@@ -3,37 +3,44 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FooterCompComponent } from './footer-comp/footer-comp.component';
 import { MainCompComponent } from './main-comp/main-comp.component';
-import { Category1CompComponent } from './category1-comp/category1-comp.component';
-import { Category2CompComponent } from './category2-comp/category2-comp.component';
-import { Product1CompComponent } from './product1-comp/product1-comp.component';
-import { Product2CompComponent } from './product2-comp/product2-comp.component';
+import { CategoryCompComponent } from './category-comp/category-comp.component';
+import { ProductCompComponent } from './product-comp/product-comp.component';
 import { ContactCompComponent } from './contact-comp/contact-comp.component';
 import { FinaleComponent } from './finale/finale.component';
 import { UserFormComponent } from './user-form/user-form.component';
-import { UseregFormComponent } from './usereg-form/usereg-form.component';
-import { UserManageFormComponent } from './usermanage-form/usermanage-form.component';
-import { UserUpdateFormComponent } from './userupdate-form/userupdate-form.component';
+import { UseregFormComponent } from './user-reg-form/user-reg-form.component';
+import { UserManageFormComponent } from './user-manage-form/user-manage-form.component';
+import { UserUpdateFormComponent } from './user-update-form/user-update-form.component';
+import { ItemManageFormComponent } from './item-manage-form/item-manage-form.component';
+import { ItemUpdateFormComponent } from './item-update-form/item-update-form.component';
+import { ItemRegFormComponent } from './item-reg-form/item-reg-form.component';
+import { BascetManageFormComponent } from './bascet-manage-form/bascet-manage-form.component';
+import { BascetItemUpdComponent } from './bascet-item-upd-form/bascet-item-upd-form.component';
+import { PayManageFormComponent } from './pay-manage-form/pay-manage-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FooterCompComponent,
     MainCompComponent,
-    Category1CompComponent,
-    Category2CompComponent,
-    Product1CompComponent,
-    Product2CompComponent,
+    CategoryCompComponent,
+    ProductCompComponent,
     ContactCompComponent,
     FinaleComponent,
     UserFormComponent,
     UseregFormComponent,
     UserManageFormComponent,
     UserUpdateFormComponent,
+    ItemUpdateFormComponent,
+    ItemRegFormComponent,
+    ItemManageFormComponent,
+    BascetManageFormComponent,
+    BascetItemUpdComponent,
+    PayManageFormComponent
   ],
   imports: [
     BrowserModule,

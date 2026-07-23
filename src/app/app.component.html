@@ -1,19 +1,29 @@
 <nav>
   <div class="menu">
-    <ul>
       <li><a routerLink="">Home</a></li>
       <li><a routerLink="/Contact">Contact</a></li>
       <ng-container *ngIf="this.userService.signedin$ |async">
-        <li><a routerLink="/Category1">List of Flowers</a></li>
-        <li><a routerLink="/Category2">Decorative items</a></li>
+        <li><a routerLink="/Category/1">List of Flowers</a></li>
+        <li><a routerLink="/Category/2">Decorative items</a></li>
         <li><a href="#" (click)="logout($event)">Logout</a></li>
-        <li><a routerLink="/UserManage">[ Manage ]</a></li>
-      </ng-container>
-      <ng-container *ngIf="!(this.userService.signedin$ |async)">
-        <li><a routerLink="/User">Sign in</a></li>
-        <li><a routerLink="/UserReg">Sign up</a></li>
-      </ng-container>
-    </ul>
+        <ng-container *ngIf="this.bascetService.signedinBascet$|async">
+          <img src="assets/basket1.png"  alt="" style="width: 75px;" (click)="goBascet($event)">
+        </ng-container>
+        <ng-container *ngIf="!(this.bascetService.signedinBascet$ |async)">
+          <img src="assets/basket.png"  alt="" style="width: 75px;">
+        </ng-container>
+        <ng-container *ngIf="this.userService.signedinAdmin$ |async">
+          <li><a routerLink="/UserManage">[ Users</a></li>
+          <li><a routerLink="/ItemManage/1">Items ]</a></li>
+        </ng-container>
+        </ng-container>
+        <ng-container *ngIf="!(this.userService.signedin$ |async)">
+          <li><a routerLink="/User">Sign in</a></li>
+          <li><a routerLink="/UserReg">Sign up</a></li>
+        </ng-container>
+        <ng-container *ngIf="this.userService.signedin$ |async">
+          <li><a>Hello, {{ userService.currentUserName$ | async }}</a></li>
+        </ng-container>
   </div>
 </nav>
 <router-outlet></router-outlet>
