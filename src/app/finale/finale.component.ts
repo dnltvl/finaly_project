@@ -77,13 +77,16 @@ export class FinaleComponent implements OnInit {
         });
 
         // מעדכנים את מונה הרכישות של המשתמש
-        this.userService.getUserById(this.userId).subscribe((user) => {
-          const updatedUser = {
-            ...user,
-            purchases: (user.purchases ?? 0) + 1
-          };
-          this.userService.editUser(updatedUser).subscribe();
+      this.userService.getUserById(this.userId).subscribe((user) => {
+        const updatedPurchases = (user.purchases ?? 0) + 1;
+        const updatedUser = {
+          ...user,
+          purchases: updatedPurchases
+        };
+        this.userService.editUser(updatedUser).subscribe(() => {
+          this.userService.currentUserPurchases$.next(updatedPurchases); // <-- חדש: מעדכן גם בזיכרון
         });
+      });
       }
     });
   }

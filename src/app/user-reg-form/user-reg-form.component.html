@@ -21,22 +21,13 @@
             </p>
             <br>
             <label for="password">Password: </label>
-            <input 
-            id="password" 
-            [type]="showPassword ? 'text' : 'password'" 
-            formControlName="password">
-
-            <br>
+                <input id="password" [type]="showPassword ? 'text' : 'password'" formControlName="password">
+                <br>
             <label for="showPasswordCheckbox">
-            <input 
-                id="showPasswordCheckbox" 
-                type="checkbox" 
-                [checked]="showPassword"
-                (change)="togglePasswordVisibility()">
-            Show password
+                <input id="showPasswordCheckbox" type="checkbox" [checked]="showPassword" (change)="togglePasswordVisibility()"> Show password
             </label>
             <p class="important" *ngIf="signupForm.get('password')?.invalid && signupForm.get('password')?.touched">
-                Password must be in English, at least 6 characters, with 1 uppercase letter, 1 number and 1 special character
+                Password must be in English,at least 6 characters, with 1 uppercase letter, 1 number and 1 special character
             </p>
             <br>
             <button class="button_submit" type="submit">Register</button>

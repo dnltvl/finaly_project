@@ -57,14 +57,14 @@ const routes: Routes = [
   path:'PayManage/:userId',
   component: PayManageFormComponent
 },
-  {
-    path:'ItemManage/:prodId',
-    component: ItemManageFormComponent
-  },
-  {
-    path:'ItemUpdate/:itemId',
-    component: ItemUpdateFormComponent
-  },
+{
+  path:'ItemManage/:itemType',
+  component: ItemManageFormComponent
+},
+{
+  path:'ItemUpdate/:itemType/:itemId',
+  component: ItemUpdateFormComponent
+},
   {
     path:'ItemReg',
     component: ItemRegFormComponent

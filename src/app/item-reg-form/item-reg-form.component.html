@@ -7,14 +7,15 @@
         <p>Please fill in the following fields:</p>
     </div>
     <div class="box2">
-    <form formControlName="category">
         <img src="assets/un.png"  alt="" style="width: 30px;">&nbsp;
-        <select id="category" name="category" class="dropdown_form">
+        <select id="category" formControlName="category" class="dropdown_form">
         <option value="0">- Select the Category -</option>
         <option value="1">Flowers</option>
         <option value="2">Decorative Items</option>
         </select>
-    </form>
+        <p class="important" *ngIf="itemForm.get('category')?.value === '0' && itemForm.get('category')?.touched">
+            Please select a category
+        </p>
     </div>
     <div class="box5">
         <div class="content">

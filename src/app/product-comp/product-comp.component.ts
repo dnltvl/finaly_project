@@ -140,7 +140,7 @@ export class ProductCompComponent implements OnInit {
     const currentUserId = this.userService.currentUserId$.getValue();
 
     if (currentUserId === null) {
-      alert('עליך להתחבר לפני הוספה לעגלה');
+      alert('You must log in before adding to cart.');
       return;
     }
 
