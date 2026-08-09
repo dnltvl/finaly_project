@@ -21,6 +21,7 @@ import { ItemRegFormComponent } from './item-reg-form/item-reg-form.component';
 import { BascetManageFormComponent } from './bascet-manage-form/bascet-manage-form.component';
 import { BascetItemUpdComponent } from './bascet-item-upd-form/bascet-item-upd-form.component';
 import { PayManageFormComponent } from './pay-manage-form/pay-manage-form.component';
+import { SettingsManageFormComponent } from './settings-manage-form/settings-manage-form.component';
 
 @NgModule({
   declarations: [
@@ -40,14 +41,15 @@ import { PayManageFormComponent } from './pay-manage-form/pay-manage-form.compon
     ItemManageFormComponent,
     BascetManageFormComponent,
     BascetItemUpdComponent,
-    PayManageFormComponent
+    PayManageFormComponent,
+    SettingsManageFormComponent
   ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule,
-    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

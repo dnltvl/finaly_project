@@ -84,7 +84,7 @@
 
 /*-----------------navigation bar--------------------*/
 .menu {
-	background-color: rgba(177, 175, 175, 0.493);
+	background-color: rgba(100, 132, 94, 0.789);
 }
 
 .menu li {
@@ -93,13 +93,12 @@
 
 .menu a {
 	display: inline-block;
-  font-size: 25px;
+  	font-size: 25px;
 	font-style: oblique;
 	font-weight: bold;
-	padding: 20px;
+	padding: 15px;
 	text-decoration: none;
 	text-shadow: 1px 1px #ff0000;
-
 }
 
 /*---------------------header----------------------------*/

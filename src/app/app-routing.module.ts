@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { SettingsManageFormComponent } from './settings-manage-form/settings-manage-form.component';
 import { MainCompComponent } from './main-comp/main-comp.component';
 import { CategoryCompComponent } from './category-comp/category-comp.component';
 import { ProductCompComponent } from './product-comp/product-comp.component';
@@ -20,6 +21,10 @@ const routes: Routes = [
   {
     path:'',
     component: MainCompComponent
+  },
+  {
+  path: 'SettingsManage',
+  component: SettingsManageFormComponent
   },
   {
     path:'Category/:id',

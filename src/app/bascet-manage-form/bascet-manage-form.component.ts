@@ -62,6 +62,9 @@ export class BascetManageFormComponent implements OnInit {
   deleteBascet(id: number) {
     this.bascetService.deleteBascet(id).subscribe(() => {
       this.bascet = this.bascet.filter(b => b.id !== id);
+      if (this.bascet.length === 0) {
+        this.bascetService.signedinBascet$.next(false);
+      }
     });
   }
 
@@ -72,6 +75,7 @@ export class BascetManageFormComponent implements OnInit {
     const ids = this.bascet.map(b => b.id);
     this.bascetService.deleteAllBascets(ids).subscribe(() => {
       this.bascet = [];
+      this.bascetService.signedinBascet$.next(false);
     });
   }
 

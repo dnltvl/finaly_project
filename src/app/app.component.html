@@ -12,10 +12,6 @@
         <ng-container *ngIf="!(this.bascetService.signedinBascet$ |async)">
           <img src="assets/basket.png"  alt="" style="width: 75px;">
         </ng-container>
-        <ng-container *ngIf="this.userService.signedinAdmin$ |async">
-          <li><a routerLink="/UserManage">[ Users</a></li>
-          <li><a routerLink="/ItemManage/1">Items ]</a></li>
-        </ng-container>
         </ng-container>
         <ng-container *ngIf="!(this.userService.signedin$ |async)">
           <li><a routerLink="/User">Sign in</a></li>
@@ -23,6 +19,11 @@
         </ng-container>
         <ng-container *ngIf="this.userService.signedin$ |async">
           <li><a>Hello, {{ userService.currentUserName$ | async }}</a></li>
+        </ng-container>
+          <ng-container *ngIf="this.userService.signedinAdmin$ |async">
+          <li><a routerLink="/UserManage" style="font-style: normal; color: white">[ Users</a></li>
+          <li><a routerLink="/ItemManage/1" style="font-style: normal; color: white">Items</a></li>
+          <li><a routerLink="/SettingsManage" style="font-style: normal; color: white">Settings ]</a></li>
         </ng-container>
   </div>
 </nav>

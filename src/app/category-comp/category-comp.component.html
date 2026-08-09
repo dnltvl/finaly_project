@@ -12,7 +12,7 @@
 				<p class="price" *ngIf="!userService.isEligibleForDiscount()">Price ${{ item.price }}</p>
 				<p class="price" *ngIf="userService.isEligibleForDiscount()">
 				<span style="text-decoration: line-through;">${{ item.price }}</span>
-				${{ userService.getDiscountedPrice(item.price).toFixed(2) }} (10% off!)
+				${{ userService.getDiscountedPrice(item.price).toFixed(2) }} ({{ userService.getDiscountPercent() }}% Discount)
 				</p>
 			</td></tr>
 			<tr><td>

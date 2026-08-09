@@ -1,7 +1,7 @@
-import { Component, EventEmitter, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { UserService } from './services/user.service';
 import { BascetService } from './services/bascet.service';
-import { BehaviorSubject } from 'rxjs';
+import { SettingsService } from './services/settings.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -11,27 +11,38 @@ import { Router } from '@angular/router';
 })
 export class AppComponent implements OnInit {
 
-  constructor(public userService: UserService, public bascetService: BascetService, private router: Router) {
+  constructor(
+    public userService: UserService,
+    public bascetService: BascetService,
+    private settingsService: SettingsService,   // <-- הוספה
+    private router: Router
+  ) {
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.settingsService.loadSettings().subscribe();   // טוען פעם אחת בהפעלת האתר
+  }
 
   logout(event: Event) {
     event.preventDefault();
     this.userService.signedin$.next(false);
+    this.userService.signedinAdmin$.next(false);
+    this.userService.currentUserId$.next(null);
+    this.userService.currentUserName$.next(null);
+    this.userService.currentUserPurchases$.next(0);
     this.bascetService.signedinBascet$.next(false);
     this.router.navigate(['']);
-    this.userService.currentUserPurchases$.next(0);
   }
 
   goBascet(event: Event) {
     event.preventDefault();
     const currentUserId = this.userService.currentUserId$.getValue();
+
     if (currentUserId === null) {
       alert('עליך להתחבר תחילה');
       return;
     }
+
     this.router.navigate(['/BascetManage', currentUserId]);
   }
-
 }

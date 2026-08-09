@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, filter, Observable, tap, map } from 'rxjs';
 import { IUser } from '../interfaces/user.interface';
+import { SettingsService } from './settings.service';
 
 @Injectable({
   providedIn: 'root',
@@ -14,7 +15,10 @@ export class UserService {
   currentUserName$ = new BehaviorSubject<string | null>(null);
   currentUserPurchases$ = new BehaviorSubject<number>(0);
 
-  constructor(private http: HttpClient) {}
+  constructor(
+    private http: HttpClient,
+    private settingsService: SettingsService   // <-- הוספה
+  ) {}
 
   getAllUsers(): Observable<IUser[]> {
     return this.http.get<IUser[]>(`${this.baseURL}users`);
@@ -44,14 +48,17 @@ export class UserService {
     return this.http.patch<IUser>(`${this.baseURL}users/${user.id}`, user);
   }
 
-  private readonly DISCOUNT_THRESHOLD = 3;
-  private readonly DISCOUNT_RATE = 0.1;
-
   isEligibleForDiscount(): boolean {
-    return (this.currentUserPurchases$.getValue() ?? 0) > this.DISCOUNT_THRESHOLD;
+    const threshold = this.settingsService.getCurrentSettings().discountThreshold;
+    return (this.currentUserPurchases$.getValue() ?? 0) > threshold;
   }
 
   getDiscountedPrice(originalPrice: number): number {
-    return this.isEligibleForDiscount() ? originalPrice * (1 - this.DISCOUNT_RATE) : originalPrice;
+    const rate = this.settingsService.getCurrentSettings().discountRate;
+    return this.isEligibleForDiscount() ? originalPrice * (1 - rate) : originalPrice;
+  }
+
+  getDiscountPercent(): number {
+  return this.settingsService.getCurrentSettings().discountRate * 100;
   }
 }

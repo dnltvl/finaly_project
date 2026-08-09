@@ -70,7 +70,7 @@ export class UserFormComponent implements OnInit {
         this.bascetService.signedinBascet$.next(bTrue);
         this.userService.currentUserPurchases$.next(this.user[i].purchases ?? 0);
         this.userService.currentUserId$.next(this.userIdStat);
-        this.userService.currentUserName$.next(`${this.user[i].firstName} ${this.user[i].lastName}`);  // <-- חדש 
+        this.userService.currentUserName$.next(`${this.user[i].firstName} ${this.user[i].lastName}`);
       }
     }
     if (!isTrue) {
@@ -84,7 +84,7 @@ export class UserFormComponent implements OnInit {
       this.userService.signedin$.next(false);
       this.userService.signedinAdmin$.next(false);
       this.userService.currentUserId$.next(null);
-      this.userService.currentUserName$.next(null);  // <-- חדש
+      this.userService.currentUserName$.next(null);
       this.bascetService.signedinBascet$.next(false);
       this.router.navigate(['']);
   }

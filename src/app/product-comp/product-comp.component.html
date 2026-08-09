@@ -26,7 +26,7 @@
 		<h4 *ngIf="!userService.isEligibleForDiscount()">Price ${{item.price}}</h4>
 		<h4 *ngIf="userService.isEligibleForDiscount()">
 			<span style="text-decoration: line-through;">${{item.price}}</span>
-			${{ effectivePrice.toFixed(2) }} (10% off!)
+			${{ effectivePrice.toFixed(2) }} ({{ userService.getDiscountPercent() }}% Discount)
 		</h4>
 		 <p>{{qty}} units in stock</p>
 	</div>

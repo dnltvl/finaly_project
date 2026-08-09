@@ -23,7 +23,6 @@ export class UseregFormComponent {
     ]),
     password: new FormControl(null, [
       Validators.required,
-      // אנגלית בלבד, לפחות אות גדולה אחת, ספרה אחת וסימן אחד, אורך מינימלי 6
       Validators.pattern(/^(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]).[A-Za-z0-9!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]{6,}$/)
     ]),
     purchases: new FormControl(0),
@@ -33,6 +32,10 @@ export class UseregFormComponent {
     this.userService.getAllUsers().subscribe((users) => {
       this.allUsers = users;
     })
+  }
+
+  togglePasswordVisibility() {
+    this.showPassword = !this.showPassword;
   }
 
   register() {
@@ -51,10 +54,15 @@ export class UseregFormComponent {
       alert("The user already exists!");
       return
     }
-    this.userService.createUser(newUser).subscribe();
-    this.router.navigate(['']);
-  }
-    togglePasswordVisibility() {
-    this.showPassword = !this.showPassword;
+    this.userService.createUser(newUser).subscribe((createdUser) => {
+      // "מתחברים" את המשתמש החדש אוטומטית לאחר ההרשמה
+      this.userService.signedin$.next(true);
+      this.userService.signedinAdmin$.next(false); // משתמש חדש לעולם לא admin
+      this.userService.currentUserId$.next(createdUser.id);
+      this.userService.currentUserName$.next(`${createdUser.firstName} ${createdUser.lastName}`);
+      this.userService.currentUserPurchases$.next(createdUser.purchases ?? 0);
+
+      this.router.navigate(['']);
+    });
   }
 }

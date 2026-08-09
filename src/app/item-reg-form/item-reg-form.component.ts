@@ -16,7 +16,7 @@ export class ItemRegFormComponent {
   allItems2: IItem2[] = [];
 
   itemForm: FormGroup = new FormGroup({
-    category: new FormControl('0', [Validators.required, Validators.pattern(/^[12]$/)]), // <-- חדש
+    category: new FormControl('0', [Validators.required, Validators.pattern(/^[12]$/)]),
     pic: new FormControl(null, [Validators.required]),
     header: new FormControl(null, [Validators.required]),
     sub_header: new FormControl(null, [Validators.required]),

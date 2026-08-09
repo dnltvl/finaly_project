@@ -5,6 +5,7 @@ import { BascetService } from '../services/bascet.service';
 import { ItemService } from '../services/item.service';
 import { Item2Service } from '../services/item2.service';
 import { UserService } from '../services/user.service';
+import { SettingsService } from '../services/settings.service';
 import { PaymentService, IPaymentDetails } from '../services/payment.service';
 import { IBascet } from '../interfaces/bascet.interface';
 import { IItem } from '../interfaces/item.interface';
@@ -28,8 +29,7 @@ export class FinaleComponent implements OnInit {
   subtotal: number = 0;
   vatAmount: number = 0;
   grandTotal: number = 0;
-
-  private readonly VAT_RATE = 0.18;
+  vatRatePercent: number = 0;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -37,6 +37,7 @@ export class FinaleComponent implements OnInit {
     private itemService: ItemService,
     private item2Service: Item2Service,
     private userService: UserService,
+    private settingsService: SettingsService,   // <-- הוספה
     private paymentService: PaymentService
   ) {
     this.activatedRoute.paramMap.subscribe(params => {
@@ -46,6 +47,9 @@ export class FinaleComponent implements OnInit {
 
   ngOnInit(): void {
     this.paymentDetails = this.paymentService.getPaymentDetails();
+
+    const vatRate = this.settingsService.getCurrentSettings().vatRate; // <-- דינמי
+    this.vatRatePercent = vatRate * 100;
 
     forkJoin({
       bascets: this.bascetService.getBascetsByUserId(this.userId),
@@ -67,7 +71,7 @@ export class FinaleComponent implements OnInit {
       });
 
       this.subtotal = this.invoiceLines.reduce((sum, line) => sum + line.itemPrice, 0);
-      this.vatAmount = this.subtotal * this.VAT_RATE;
+      this.vatAmount = this.subtotal * vatRate;
       this.grandTotal = this.subtotal + this.vatAmount;
 
       if (bascets.length > 0) {
@@ -76,17 +80,16 @@ export class FinaleComponent implements OnInit {
           this.bascetService.signedinBascet$.next(false);
         });
 
-        // מעדכנים את מונה הרכישות של המשתמש
-      this.userService.getUserById(this.userId).subscribe((user) => {
-        const updatedPurchases = (user.purchases ?? 0) + 1;
-        const updatedUser = {
-          ...user,
-          purchases: updatedPurchases
-        };
-        this.userService.editUser(updatedUser).subscribe(() => {
-          this.userService.currentUserPurchases$.next(updatedPurchases); // <-- חדש: מעדכן גם בזיכרון
+        this.userService.getUserById(this.userId).subscribe((user) => {
+          const updatedPurchases = (user.purchases ?? 0) + 1;
+          const updatedUser = {
+            ...user,
+            purchases: updatedPurchases
+          };
+          this.userService.editUser(updatedUser).subscribe(() => {
+            this.userService.currentUserPurchases$.next(updatedPurchases);
+          });
         });
-      });
       }
     });
   }
