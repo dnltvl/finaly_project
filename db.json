@@ -1,7 +1,7 @@
 {
   "settings": {
     "vatRate": 0.18,
-    "discountThreshold": 2,
+    "discountThreshold": 3,
     "discountRate": 0.1
   },
   "users": [
@@ -29,7 +29,7 @@
       "lastName": "Tavlinsky",
       "email": "dnl.tvl@gmail.com",
       "password": "Qwerty!123",
-      "purchases": 2,
+      "purchases": 8,
       "id": 3
     },
     {
@@ -61,7 +61,7 @@
       "pic1": "../assets/11.jpg",
       "header1": "More information",
       "paragraph1": "Once their spectacular frilly blooms have died, the green-leaved shrubs provide an attractive backdrop for other plants. The plant can live up to 100 years and is cold-hardy from 20 to -40 degrees Fahrenheit. Plant tree peonies six weeks before the first freeze in the late fall, but not in the spring, which weakens them.",
-      "qty": 415,
+      "qty": 410,
       "price": 130
     },
     {
@@ -73,7 +73,7 @@
       "pic1": "../assets/22.jpg",
       "header1": "More information",
       "paragraph1": "The big, thistle-like leaves of Oriental poppy are downy, deeply-lobed, and rich green in color, offering aesthetic value in their own right. The leaves are tightly packed, and the flower stems are stiff and hairy, making Oriental poppy a good cut flower. The pods that succeed the flowers also have an ornamental quality and are dried for floral arrangements and crafts.",
-      "qty": 167,
+      "qty": 160,
       "price": 125
     },
     {
@@ -85,7 +85,7 @@
       "pic1": "../assets/33.jpg",
       "header1": "More information",
       "paragraph1": "Some hydrangeas have large, round flower heads while others have smaller, flatter, and more delicate flowers, along with varying foliage shapes depending on the species. To ensure that hydrangea shrubs have time to establish a healthy root system, plant them in the fall or early spring. Hydrangeas are rapid growers, averaging two feet or more of growth per year. Be aware that the plant is toxic to humans and animals",
-      "qty": 220,
+      "qty": 213,
       "price": 150
     },
     {
@@ -109,7 +109,7 @@
       "pic1": "../assets/55.jpg",
       "header1": "More information",
       "paragraph1": "Many water lilies and lotuses are easy to grow and reward the gardener with fragrant and sumptuous blossoms from June until October. Both plants are best planted in spring. Water lilies start faster and typically have a faster growth rate than lotus, which are notoriously slow to start and need warmth and plenty of sunshine to flower.",
-      "qty": 327,
+      "qty": 323,
       "price": 130
     },
     {
@@ -121,7 +121,7 @@
       "pic1": "../assets/66.jpg",
       "header1": "More information",
       "paragraph1": "True lilies are perennial plants that grow from bulbs that have a characteristic scale structure and notably large flowers. More than 80 species are in the genus, but most of the plants grown in gardens are hybrid crosses of various native species—or cultivars that have been selectively developed from those hybrids.",
-      "qty": 552,
+      "qty": 548,
       "price": 120
     }
   ],
@@ -147,7 +147,7 @@
       "pic1": "../assets/88.jpg",
       "header1": "Brand information",
       "paragraph1": "When youre part of it, you put your heart into it.<br>At John Lewis & Partners, were more than employees - were owners. Thats why were all called Partners. And thats why we all go above and beyond to offer quality products and outstanding service to the people that matter most - you, our customers. Because for us, its personal.",
-      "qty": 615,
+      "qty": 614,
       "price": 299
     },
     {
@@ -159,7 +159,7 @@
       "pic1": "../assets/99.jpg",
       "header1": "Brand information",
       "paragraph1": "Poole Pottery has been made in England since 1873. Now in the heart of the Staffordshire Potteries every piece is formed from English clay and sprung from handmade moulds. Each piece of Poole Pottery is handled with the care and attention of their skilled craftsmen, but it is their glazers and paintresses, whose expertise in decoration, that makes every piece unique and individual. Layer upon layer of reactive glaze create Pooles vibrant and bold decorations. Every finished item is personalised with the artists own individual mark, adding even more value to each piece.",
-      "qty": 179,
+      "qty": 177,
       "price": 99
     },
     {
@@ -177,15 +177,6 @@
   ],
   "baskets": [
     {
-      "id": 1,
-      "orderId": 3,
-      "userId": 3,
-      "itemType": 2,
-      "itemId": 1,
-      "itemQty": 2,
-      "itemPrice": 350.24
-    },
-    {
       "id": 2,
       "orderId": 2,
       "userId": 2,
@@ -202,6 +193,15 @@
       "itemId": 5,
       "itemQty": 4,
       "itemPrice": 468
+    },
+    {
+      "id": 4,
+      "orderId": 1,
+      "userId": 1,
+      "itemType": 1,
+      "itemId": 2,
+      "itemQty": 1,
+      "itemPrice": 125
     }
   ]
 }
