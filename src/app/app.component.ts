@@ -14,7 +14,7 @@ export class AppComponent implements OnInit {
   constructor(
     public userService: UserService,
     public bascetService: BascetService,
-    private settingsService: SettingsService,   // <-- הוספה
+    private settingsService: SettingsService,
     private router: Router
   ) {
   }
@@ -35,11 +35,12 @@ export class AppComponent implements OnInit {
   }
 
   goBascet(event: Event) {
+    console.log(event);
     event.preventDefault();
     const currentUserId = this.userService.currentUserId$.getValue();
 
     if (currentUserId === null) {
-      alert('עליך להתחבר תחילה');
+      alert('You must be logged in to access the basket.');
       return;
     }
 

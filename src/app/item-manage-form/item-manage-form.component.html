@@ -1,6 +1,6 @@
 <div class="box_logo"></div>
 <div class = "box2">
-	<p class="important">List of items - {{ itemType === 1 ? 'Category 1' : 'Category 2' }}</p>
+	<p class="important">{{ itemType === 1 ? 'Flowers' : 'Decorative Items' }}</p>
 </div>
 <div align="center">
 	<table width="90%">
@@ -10,10 +10,10 @@
 			</td>
 			<td align="right" valign="middle">
 				<form *ngIf="itemType === 1" [routerLink]="['/ItemManage', 2]">
-					<input align="right" class="button_submit1" type="submit" value="Category 2" />
+					<input align="right" class="button_submit1" type="submit" value="Decorative Items" />
 				</form>
 				<form *ngIf="itemType === 2" [routerLink]="['/ItemManage', 1]">
-					<input align="right" class="button_submit1" type="submit" value="Category 1" />
+					<input align="right" class="button_submit1" type="submit" value="Flowers" />
 				</form>
 			</td>
 		</tr>

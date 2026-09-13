@@ -23,8 +23,8 @@ const routes: Routes = [
     component: MainCompComponent
   },
   {
-  path: 'SettingsManage',
-  component: SettingsManageFormComponent
+    path: 'SettingsManage',
+    component: SettingsManageFormComponent
   },
   {
     path:'Category/:id',
@@ -42,34 +42,34 @@ const routes: Routes = [
     path:'UserReg',
     component: UseregFormComponent
   },
-{
+  {
     path:'UserManage',
     component: UserManageFormComponent
   },
-{
+  {
     path:'UserUpdate/:userId',
     component: UserUpdateFormComponent
   },
   {
-  path:'Product/:itemType/:prodId',
-  component: ProductCompComponent
+    path:'Product/:itemType/:prodId',
+    component: ProductCompComponent
   },
-{
-  path:'Finale/:userId',
-  component: FinaleComponent
-},
-{
-  path:'PayManage/:userId',
-  component: PayManageFormComponent
-},
-{
-  path:'ItemManage/:itemType',
-  component: ItemManageFormComponent
-},
-{
-  path:'ItemUpdate/:itemType/:itemId',
-  component: ItemUpdateFormComponent
-},
+  {
+    path:'Finale/:userId',
+    component: FinaleComponent
+  },
+  {
+    path:'PayManage/:userId',
+    component: PayManageFormComponent
+  },
+  {
+    path:'ItemManage/:itemType',
+    component: ItemManageFormComponent
+  },
+  {
+    path:'ItemUpdate/:itemType/:itemId',
+    component: ItemUpdateFormComponent
+  },
   {
     path:'ItemReg',
     component: ItemRegFormComponent

@@ -11,7 +11,7 @@
       "lastName": "Admin",
       "email": "admin@example.com",
       "password": "Qwerty!123",
-      "purchases": 3,
+      "purchases": "0",
       "id": 1
     },
     {
@@ -22,33 +22,6 @@
       "password": "Qwerty!123",
       "purchases": 6,
       "id": 2
-    },
-    {
-      "userName": "cio",
-      "firstName": "Daniel",
-      "lastName": "Tavlinsky",
-      "email": "dnl.tvl@gmail.com",
-      "password": "Qwerty!123",
-      "purchases": 8,
-      "id": 3
-    },
-    {
-      "userName": "www",
-      "firstName": "Daniel",
-      "lastName": "Tavlinsky",
-      "email": "dnl.tvl@gmail.com",
-      "password": "Qwerty!123",
-      "purchases": 0,
-      "id": 4
-    },
-    {
-      "userName": "zzz",
-      "firstName": "Daniel",
-      "lastName": "Tavlinsky",
-      "email": "dnl.tvl@gmail.com",
-      "password": "Qwerty!123",
-      "purchases": 2,
-      "id": 5
     }
   ],
   "items": [
@@ -61,7 +34,7 @@
       "pic1": "../assets/11.jpg",
       "header1": "More information",
       "paragraph1": "Once their spectacular frilly blooms have died, the green-leaved shrubs provide an attractive backdrop for other plants. The plant can live up to 100 years and is cold-hardy from 20 to -40 degrees Fahrenheit. Plant tree peonies six weeks before the first freeze in the late fall, but not in the spring, which weakens them.",
-      "qty": 410,
+      "qty": 403,
       "price": 130
     },
     {
@@ -73,7 +46,7 @@
       "pic1": "../assets/22.jpg",
       "header1": "More information",
       "paragraph1": "The big, thistle-like leaves of Oriental poppy are downy, deeply-lobed, and rich green in color, offering aesthetic value in their own right. The leaves are tightly packed, and the flower stems are stiff and hairy, making Oriental poppy a good cut flower. The pods that succeed the flowers also have an ornamental quality and are dried for floral arrangements and crafts.",
-      "qty": 160,
+      "qty": 156,
       "price": 125
     },
     {
@@ -121,7 +94,7 @@
       "pic1": "../assets/66.jpg",
       "header1": "More information",
       "paragraph1": "True lilies are perennial plants that grow from bulbs that have a characteristic scale structure and notably large flowers. More than 80 species are in the genus, but most of the plants grown in gardens are hybrid crosses of various native species—or cultivars that have been selectively developed from those hybrids.",
-      "qty": 548,
+      "qty": 546,
       "price": 120
     }
   ],
@@ -129,50 +102,38 @@
     {
       "id": 1,
       "pic": "../assets/sale.jpg",
-      "header": "Poole Pottery Maya Manhattan Vase",
-      "sub_header": "Green/Turquoise, H36cm, Product code: 73583505",
+      "header": "Pottery Maya Manhattan Vase",
+      "sub_header": "Turquoise, H36cm, Product code: 73583505",
       "paragraph": "Dressed in layer upon layer of rich blue and green glazes, this vase from the Poole Pottery Maya collection is cast by hand from English earthenware clay. Its glazed in multiple, reactive layers which means the colouring will continue to develop as the piece matures. As each piece is decorated by hand every one will be unique.",
       "pic1": "../assets/77.jpg",
       "header1": "Brand information",
       "paragraph1": "Dartington Crystal began in 1967 when a group of Swedish glassmakers brought their skills to rural North Devon. Working with the finest natural materials, these craftsmen soon became known for creating beautiful glassware to be used and admired. Today, the company continues to provide elegant, simple designs in crystal and glass, and is now the only crystal brand still producing in the UK. With a contemporary and clean design style, Dartington combines the ultimate in functionality with eye-catching appeal to make it the perfect choice for your home or as a gift",
-      "qty": 490,
+      "qty": 489,
       "price": 199
     },
     {
       "id": 2,
       "pic": "../assets/sale2.jpg",
-      "header": "Splash Picolina Vase",
-      "sub_header": "Multi, H8cm, Product code: 73531410",
+      "header": "John Lewis Splash Picolina Vase",
+      "sub_header": "White and Multi, H8cm, Product code: 73531410",
       "paragraph": "Our mini Splash vase has erratic splodges of colour, much like a paint splash. Being so petite its best for displaying the odd short stem or piece of foliage. Alternatively, go with the art studio look and use it as a container for paintbrushes and other art supplies. Be aware that as its handmade there could be variations in the colour of this vase. It means each piece is unique. We also cannot guarantee that this particular vase will be watertight due to its materials and the way its made. Wed recommend using faux flowers or placing it on a protective surface.",
       "pic1": "../assets/88.jpg",
       "header1": "Brand information",
       "paragraph1": "When youre part of it, you put your heart into it.<br>At John Lewis & Partners, were more than employees - were owners. Thats why were all called Partners. And thats why we all go above and beyond to offer quality products and outstanding service to the people that matter most - you, our customers. Because for us, its personal.",
-      "qty": 614,
+      "qty": 612,
       "price": 299
     },
     {
       "id": 3,
       "pic": "../assets/sale3.jpg",
-      "header": "Poole Pottery Volcano Purse Bud Vase",
+      "header": "Pottery Volcano Purse Bud Vase",
       "sub_header": "Orange, H12.5cm, Product code: 73581305",
       "paragraph": "Featuring a collision of strong glazes that melt and fuse similar to lava over cold stone, this dramatic Bud Vase from our Volcano collection is guaranteed to add a striking splash of colour to any interior. Dramatic in colour and style, this Bud Vase is cast and glazed by hand and displays the sensational effects that make every Poole item unique. Attractively presented in a Poole Pottery gift box, this Volcano Bud Vase is certain to please pottery collectors and nature enthusiasts alike.",
       "pic1": "../assets/99.jpg",
       "header1": "Brand information",
       "paragraph1": "Poole Pottery has been made in England since 1873. Now in the heart of the Staffordshire Potteries every piece is formed from English clay and sprung from handmade moulds. Each piece of Poole Pottery is handled with the care and attention of their skilled craftsmen, but it is their glazers and paintresses, whose expertise in decoration, that makes every piece unique and individual. Layer upon layer of reactive glaze create Pooles vibrant and bold decorations. Every finished item is personalised with the artists own individual mark, adding even more value to each piece.",
-      "qty": 177,
+      "qty": 175,
       "price": 99
-    },
-    {
-      "pic": "assets/home_header1.jpg",
-      "header": "4444",
-      "sub_header": "bbb",
-      "paragraph": "nnn",
-      "pic1": "assets/basket1.png",
-      "header1": "mmm",
-      "paragraph1": "rrr",
-      "qty": 0,
-      "price": 0,
-      "id": 4
     }
   ],
   "baskets": [
@@ -193,15 +154,6 @@
       "itemId": 5,
       "itemQty": 4,
       "itemPrice": 468
-    },
-    {
-      "id": 4,
-      "orderId": 1,
-      "userId": 1,
-      "itemType": 1,
-      "itemId": 2,
-      "itemQty": 1,
-      "itemPrice": 125
     }
   ]
 }
