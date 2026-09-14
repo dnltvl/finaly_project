@@ -59,25 +59,31 @@ export class BascetManageFormComponent implements OnInit {
     });
   }
 
-  deleteBascet(id: number) {
-    this.bascetService.deleteBascet(id).subscribe(() => {
-      this.bascet = this.bascet.filter(b => b.id !== id);
-      if (this.bascet.length === 0) {
-        this.bascetService.signedinBascet$.next(false);
-      }
-    });
+deleteBascet(id: number) {
+  if (!confirm('Are you sure you want to delete the item?')) {
+    return;
   }
-
-  deleteAllBascets() {
+  this.bascetService.deleteBascet(id).subscribe(() => {
+    this.bascet = this.bascet.filter(b => b.id !== id);
     if (this.bascet.length === 0) {
-      return;
-    }
-    const ids = this.bascet.map(b => b.id);
-    this.bascetService.deleteAllBascets(ids).subscribe(() => {
-      this.bascet = [];
       this.bascetService.signedinBascet$.next(false);
-    });
+    }
+  });
+}
+
+deleteAllBascets() {
+  if (this.bascet.length === 0) {
+    return;
   }
+  if (!confirm('Are you sure you want to delete the basket?')) {
+    return;
+  }
+  const ids = this.bascet.map(b => b.id);
+  this.bascetService.deleteAllBascets(ids).subscribe(() => {
+    this.bascet = [];
+    this.bascetService.signedinBascet$.next(false);
+  });
+}
 
   plusQty(bascet: IBascetWithPic) {
     const newQty = bascet.itemQty + 1;

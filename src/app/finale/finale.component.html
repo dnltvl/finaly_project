@@ -9,14 +9,14 @@
       <td width="100" bgColor="EAE0CF"><h4>Price</h4></td>
     </tr>
     <tr valign="middle" *ngFor="let line of invoiceLines">
-      <td><h4>{{ line.header }}</h4></td>
-      <td><h4>{{ line.itemQty }}</h4></td>
-      <td><h4>${{ line.itemPrice.toLocaleString() }}</h4></td>
+      <td>{{ line.header }}</td>
+      <td>{{ line.itemQty }}</td>
+      <td>${{ line.itemPrice.toLocaleString() }}</td>
     </tr>
     <tr>
       <td colspan="3" align="right" valign="middle">
-      <p>Subtotal: ${{ subtotal.toFixed(2) }}</p>
-      <p>VAT ({{ vatRatePercent }}%): ${{ vatAmount.toFixed(2) }}</p>
+      <h4>Subtotal: ${{ subtotal.toFixed(2) }}</h4>
+      <h4>VAT ({{ vatRatePercent }}%): ${{ vatAmount.toFixed(2) }}</h4>
       <h4 class="price">Grand Total: ${{ grandTotal.toFixed(2) }}</h4>
       </td>
     </tr>

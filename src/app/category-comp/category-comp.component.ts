@@ -20,7 +20,7 @@ export class CategoryCompComponent implements OnInit {
     private itemService: ItemService,
     private item2Service: Item2Service,
     private activatedRoute: ActivatedRoute,
-    public userService: UserService   // <-- הוספה, public כדי שה-HTML יוכל לגשת
+    public userService: UserService
   ) { }
 
   ngOnInit(): void {

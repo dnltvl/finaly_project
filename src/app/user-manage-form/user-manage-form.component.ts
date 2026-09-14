@@ -17,8 +17,11 @@ export class UserManageFormComponent implements OnInit {
     })
   }
 
-  deleteUser(userId: number){
-    this.userService.deleteUser(userId).subscribe(()=>{
+  deleteUser(userId: number) {
+    if (!confirm('Are you sure you want to delete the user?')) {
+      return;
+    }
+    this.userService.deleteUser(userId).subscribe(() => {
       this.users = this.users.filter(u => u.id !== userId);
     });
   }

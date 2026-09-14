@@ -64,6 +64,7 @@ export class UserFormComponent implements OnInit {
             bTrue = true;
           }
         }
+        this.userService.saveUserIdToStorage(this.userIdStat);
         this.userService.signedin$.next(isTrue);
         this.userService.signedinAdmin$.next(aTrue);
         this.userService.currentUserId$.next(this.userIdStat);

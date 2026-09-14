@@ -16,11 +16,11 @@
     },
     {
       "userName": "eli",
-      "firstName": "eli",
-      "lastName": "zar",
+      "firstName": "Eli",
+      "lastName": "Zar",
       "email": "eli@zar.com",
       "password": "Qwerty!123",
-      "purchases": 6,
+      "purchases": "6",
       "id": 2
     }
   ],
@@ -34,7 +34,7 @@
       "pic1": "../assets/11.jpg",
       "header1": "More information",
       "paragraph1": "Once their spectacular frilly blooms have died, the green-leaved shrubs provide an attractive backdrop for other plants. The plant can live up to 100 years and is cold-hardy from 20 to -40 degrees Fahrenheit. Plant tree peonies six weeks before the first freeze in the late fall, but not in the spring, which weakens them.",
-      "qty": 403,
+      "qty": 381,
       "price": 130
     },
     {
@@ -46,7 +46,7 @@
       "pic1": "../assets/22.jpg",
       "header1": "More information",
       "paragraph1": "The big, thistle-like leaves of Oriental poppy are downy, deeply-lobed, and rich green in color, offering aesthetic value in their own right. The leaves are tightly packed, and the flower stems are stiff and hairy, making Oriental poppy a good cut flower. The pods that succeed the flowers also have an ornamental quality and are dried for floral arrangements and crafts.",
-      "qty": 156,
+      "qty": 137,
       "price": 125
     },
     {
@@ -58,7 +58,7 @@
       "pic1": "../assets/33.jpg",
       "header1": "More information",
       "paragraph1": "Some hydrangeas have large, round flower heads while others have smaller, flatter, and more delicate flowers, along with varying foliage shapes depending on the species. To ensure that hydrangea shrubs have time to establish a healthy root system, plant them in the fall or early spring. Hydrangeas are rapid growers, averaging two feet or more of growth per year. Be aware that the plant is toxic to humans and animals",
-      "qty": 213,
+      "qty": 205,
       "price": 150
     },
     {
@@ -82,7 +82,7 @@
       "pic1": "../assets/55.jpg",
       "header1": "More information",
       "paragraph1": "Many water lilies and lotuses are easy to grow and reward the gardener with fragrant and sumptuous blossoms from June until October. Both plants are best planted in spring. Water lilies start faster and typically have a faster growth rate than lotus, which are notoriously slow to start and need warmth and plenty of sunshine to flower.",
-      "qty": 323,
+      "qty": 322,
       "price": 130
     },
     {
@@ -108,19 +108,19 @@
       "pic1": "../assets/77.jpg",
       "header1": "Brand information",
       "paragraph1": "Dartington Crystal began in 1967 when a group of Swedish glassmakers brought their skills to rural North Devon. Working with the finest natural materials, these craftsmen soon became known for creating beautiful glassware to be used and admired. Today, the company continues to provide elegant, simple designs in crystal and glass, and is now the only crystal brand still producing in the UK. With a contemporary and clean design style, Dartington combines the ultimate in functionality with eye-catching appeal to make it the perfect choice for your home or as a gift",
-      "qty": 489,
+      "qty": 487,
       "price": 199
     },
     {
       "id": 2,
-      "pic": "../assets/sale2.jpg",
+      "pic": "assets/sale2.jpg",
       "header": "John Lewis Splash Picolina Vase",
       "sub_header": "White and Multi, H8cm, Product code: 73531410",
       "paragraph": "Our mini Splash vase has erratic splodges of colour, much like a paint splash. Being so petite its best for displaying the odd short stem or piece of foliage. Alternatively, go with the art studio look and use it as a container for paintbrushes and other art supplies. Be aware that as its handmade there could be variations in the colour of this vase. It means each piece is unique. We also cannot guarantee that this particular vase will be watertight due to its materials and the way its made. Wed recommend using faux flowers or placing it on a protective surface.",
       "pic1": "../assets/88.jpg",
       "header1": "Brand information",
       "paragraph1": "When youre part of it, you put your heart into it.<br>At John Lewis & Partners, were more than employees - were owners. Thats why were all called Partners. And thats why we all go above and beyond to offer quality products and outstanding service to the people that matter most - you, our customers. Because for us, its personal.",
-      "qty": 612,
+      "qty": 594,
       "price": 299
     },
     {
@@ -132,28 +132,46 @@
       "pic1": "../assets/99.jpg",
       "header1": "Brand information",
       "paragraph1": "Poole Pottery has been made in England since 1873. Now in the heart of the Staffordshire Potteries every piece is formed from English clay and sprung from handmade moulds. Each piece of Poole Pottery is handled with the care and attention of their skilled craftsmen, but it is their glazers and paintresses, whose expertise in decoration, that makes every piece unique and individual. Layer upon layer of reactive glaze create Pooles vibrant and bold decorations. Every finished item is personalised with the artists own individual mark, adding even more value to each piece.",
-      "qty": 175,
+      "qty": 166,
       "price": 99
     }
   ],
   "baskets": [
+    {
+      "id": 1,
+      "orderId": 2,
+      "userId": 2,
+      "itemType": 1,
+      "itemId": 1,
+      "itemQty": 3,
+      "itemPrice": 351
+    },
     {
       "id": 2,
       "orderId": 2,
       "userId": 2,
       "itemType": 1,
       "itemId": 2,
-      "itemQty": 2,
-      "itemPrice": 225
+      "itemQty": 1,
+      "itemPrice": 112.5
     },
     {
       "id": 3,
       "orderId": 2,
       "userId": 2,
       "itemType": 1,
-      "itemId": 5,
-      "itemQty": 4,
-      "itemPrice": 468
+      "itemId": 3,
+      "itemQty": 3,
+      "itemPrice": 405
+    },
+    {
+      "id": 4,
+      "orderId": 2,
+      "userId": 2,
+      "itemType": 2,
+      "itemId": 1,
+      "itemQty": 1,
+      "itemPrice": 179.1
     }
   ]
 }

@@ -45,69 +45,69 @@ export class BascetItemUpdComponent implements OnInit {
       this.item = items[this.prodId]
       console.log(this.item)
     })
-    }
-
-plus(price: number)
-{
-  this.isSubmitDisabled = false;
-  if(this.qty > 0)
-  {
-  this.result += price;
-  this.count ++;
-  this.qty --;
- }
- else
- {
-  this.isSubmitDisabled = true;
- }
-}
-minus(price: number)
-{
-  if(this.count > 0)
-  {
-    this.result -= price;
-    this.count --;
-    this.qty ++;
-    if(this.count < 0)
-    {
-      this.result = 0;
-      this.count = 0;
-      this.qty = this.itemsList[this.prodId].qty; 
-    }
   }
-  
-    if(this.count == 0)
+
+  plus(price: number)
+  {
+    this.isSubmitDisabled = false;
+    if(this.qty > 0)
+    {
+      this.result += price;
+      this.count ++;
+      this.qty --;
+    }
+    else
     {
       this.isSubmitDisabled = true;
     }
-  
-}
-cancel()
-{
-  this.result = 0;
-  this.count = 0;
-  this.qty = this.itemsList[this.prodId].qty;
-  this.isSubmitDisabled = true;
+  }
+  minus(price: number)
+  {
+    if(this.count > 0)
+    {
+      this.result -= price;
+      this.count --;
+      this.qty ++;
+      if(this.count < 0)
+      {
+        this.result = 0;
+        this.count = 0;
+        this.qty = this.itemsList[this.prodId].qty; 
+      }
+    }
+    
+      if(this.count == 0)
+      {
+        this.isSubmitDisabled = true;
+      }
+    
+  }
 
-}
+  cancel()
+  {
+    this.result = 0;
+    this.count = 0;
+    this.qty = this.itemsList[this.prodId].qty;
+    this.isSubmitDisabled = true;
 
-updItem()
-{
-  const uItem: IItem = Object({
-    id: this.item.id,
-    pic: this.item.pic,
-    header: this.item.header,
-    sub_header: this.item.sub_header,
-    paragraph: this.item.paragraph,
-    pic1: this.item.pic1,
-    header1: this.item.header1,
-    paragraph1: this.item.paragraph1,
-    qty: this.qty,
-    price: this.item.price,}
-    )
-  const newItem = this.itemService.updateItem(uItem).subscribe();
-}
+  }
 
+  updItem()
+  {
+    const uItem: IItem = Object({
+      id: this.item.id,
+      pic: this.item.pic,
+      header: this.item.header,
+      sub_header: this.item.sub_header,
+      paragraph: this.item.paragraph,
+      pic1: this.item.pic1,
+      header1: this.item.header1,
+      paragraph1: this.item.paragraph1,
+      qty: this.qty,
+      price: this.item.price,}
+      )
+    const newItem = this.itemService.updateItem(uItem).subscribe();
+  }
 }
 
 

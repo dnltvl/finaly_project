@@ -5,11 +5,11 @@ import { IItem2 } from '../interfaces/item2.interface';
 import { ItemService } from '../services/item.service';
 import { Item2Service } from '../services/item2.service';
 
-@Component({
-  selector: 'app-item-manage-form',
-  templateUrl: './item-manage-form.component.html',
-  styleUrls: ['./item-manage-form.component.css'],
-})
+  @Component({
+    selector: 'app-item-manage-form',
+    templateUrl: './item-manage-form.component.html',
+    styleUrls: ['./item-manage-form.component.css'],
+  })
 export class ItemManageFormComponent implements OnInit {
   items: (IItem | IItem2)[] = [];
   itemType: number = 1;
@@ -40,6 +40,9 @@ export class ItemManageFormComponent implements OnInit {
   }
 
   deleteItem(itemId: number) {
+    if (!confirm('Are you sure you want to delete the item?')) {
+      return;
+    }
     if (this.itemType === 1) {
       this.itemService.deleteItem(itemId).subscribe(() => {
         this.items = this.items.filter(i => i.id !== itemId);

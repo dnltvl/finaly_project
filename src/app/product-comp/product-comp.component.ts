@@ -40,7 +40,7 @@ export class ProductCompComponent implements OnInit {
     private itemService: ItemService,
     private item2Service: Item2Service,
     private bascetService: BascetService,
-    public userService: UserService,   // <-- public, כי גם ה-HTML ישתמש בו
+    public userService: UserService,
     private router: Router
   ) {
     this.activatedRoute.paramMap.subscribe(params => this.itemType = Number(params.get("itemType")));

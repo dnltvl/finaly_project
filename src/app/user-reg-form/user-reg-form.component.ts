@@ -55,9 +55,10 @@ export class UseregFormComponent {
       return
     }
     this.userService.createUser(newUser).subscribe((createdUser) => {
-      // "מתחברים" את המשתמש החדש אוטומטית לאחר ההרשמה
+      // מחבר את המשתמש החדש אוטומטית לאחר ההרשמה
+      this.userService.saveUserIdToStorage(createdUser.id);
       this.userService.signedin$.next(true);
-      this.userService.signedinAdmin$.next(false); // משתמש חדש לעולם לא admin
+      this.userService.signedinAdmin$.next(false);
       this.userService.currentUserId$.next(createdUser.id);
       this.userService.currentUserName$.next(`${createdUser.firstName} ${createdUser.lastName}`);
       this.userService.currentUserPurchases$.next(createdUser.purchases ?? 0);

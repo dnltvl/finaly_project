@@ -49,8 +49,6 @@ export class ItemRegFormComponent {
 
     const formValue = this.itemForm.value;
     const category = formValue.category;
-
-    // מוציאים את category מהאובייקט לפני השמירה (הוא לא שדה אמיתי ב-DB)
     const { category: _omit, ...itemData } = formValue;
 
     if (category === '1') {

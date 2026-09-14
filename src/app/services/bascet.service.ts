@@ -17,7 +17,7 @@ export class BascetService {
   }
 
   getBascetsByUserId(userId: number): Observable<IBascet[]> {
-    return this.http.get<IBascet[]>(`${this.baseURL}baskets?userId=${userId}`);
+    return this.http.get<IBascet[]>(`${this.baseURL}baskets?userId=${userId}&_=${Date.now()}`);
   }
 
   getBascetById(bascetId: number): Observable<IBascet> {

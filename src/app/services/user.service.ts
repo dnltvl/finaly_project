@@ -17,9 +17,24 @@ export class UserService {
 
   constructor(
     private http: HttpClient,
-    private settingsService: SettingsService   // <-- הוספה
+    private settingsService: SettingsService
   ) {}
 
+  private readonly STORAGE_KEY = 'currentUserId';
+
+  saveUserIdToStorage(userId: number) {
+    localStorage.setItem(this.STORAGE_KEY, String(userId));
+  }
+
+  getUserIdFromStorage(): number | null {
+    const stored = localStorage.getItem(this.STORAGE_KEY);
+    return stored ? Number(stored) : null;
+  }
+
+  clearUserIdFromStorage() {
+    localStorage.removeItem(this.STORAGE_KEY);
+  }
+  
   getAllUsers(): Observable<IUser[]> {
     return this.http.get<IUser[]>(`${this.baseURL}users`);
   }

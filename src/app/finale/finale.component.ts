@@ -37,7 +37,7 @@ export class FinaleComponent implements OnInit {
     private itemService: ItemService,
     private item2Service: Item2Service,
     private userService: UserService,
-    private settingsService: SettingsService,   // <-- הוספה
+    private settingsService: SettingsService,
     private paymentService: PaymentService
   ) {
     this.activatedRoute.paramMap.subscribe(params => {
@@ -48,7 +48,7 @@ export class FinaleComponent implements OnInit {
   ngOnInit(): void {
     this.paymentDetails = this.paymentService.getPaymentDetails();
 
-    const vatRate = this.settingsService.getCurrentSettings().vatRate; // <-- דינמי
+    const vatRate = this.settingsService.getCurrentSettings().vatRate;
     this.vatRatePercent = vatRate * 100;
 
     forkJoin({
